@@ -13,6 +13,7 @@
     border: 1px solid var(--border);
     background: var(--linen);
     position: relative;
+    transition: all 0.3s ease;
 }
 .pub-item::before {
     content: '';
@@ -21,6 +22,10 @@
     width: 3px;
     background: var(--rose);
 }
+.pub-highlight {
+  animation: halo-glow 2s ease-out forwards;
+}
+
 .pub-title {
     font-size: 1.25rem;
     font-weight: 400;
@@ -52,3 +57,16 @@
     cursor: pointer;
 }
 .pub-tag:hover { background: var(--sage-light); border-color: var(--sage); color: var(--sage-dark); }
+
+
+@keyframes halo-glow {
+  0% {
+    box-shadow: 0 0 0 0px #b48c8c, 0 0 20px 10px rgba(180, 140, 140, 0.7);
+    background-color: rgba(180, 140, 140, 0.1);
+    border-color: #b48c8c;
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent, 0 0 30px 10px transparent;
+    background-color: transparent;
+  }
+}

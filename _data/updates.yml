@@ -1,11 +1,14 @@
 - date: "May 2026"
   text: "🎉 Our paper titled _Is Data Shapley Not Better than Random in Data Selection? Ask NASH_ has been accepted as a ✨**spotlight**✨ paper at **ICML 2026**. See you in Seoul!"
   link: "#publications"
+  paper_id: "nash"
 
 - date: "May 2026"
   text: "🎉 Our paper titled _Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning_ has been accepted as a ✨**spotlight**✨ paper at **ICML 2026**. See you in Seoul!"
   link: "#publications"
+  paper_id: "dvf"
 
 - date: "Apr 2026"
   text: "🇧🇷 I attended **ICLR 2026** in Rio de Janeiro and presented our paper _INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy!_"
-
+  link: "#publications"
+  paper_id: "inosgd"

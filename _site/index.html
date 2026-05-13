@@ -100,7 +100,7 @@
         🎉 Our paper titled <em>Is Data Shapley Not Better than Random in Data Selection? Ask NASH</em> has been accepted as a ✨<strong>spotlight</strong>✨ paper at <strong>ICML 2026</strong>. See you in Seoul!
 
         
-          <a href="/#publications" class="update-arrow-link js-update-link">→</a>
+          <a href="/#publications#nash" class="update-arrow-link js-update-link">→</a>
         
       </span>
     </li>
@@ -111,7 +111,7 @@
         🎉 Our paper titled <em>Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning</em> has been accepted as a ✨<strong>spotlight</strong>✨ paper at <strong>ICML 2026</strong>. See you in Seoul!
 
         
-          <a href="/#publications" class="update-arrow-link js-update-link">→</a>
+          <a href="/#publications#dvf" class="update-arrow-link js-update-link">→</a>
         
       </span>
     </li>
@@ -121,6 +121,8 @@
       <span class="update-text">
         🇧🇷 I attended <strong>ICLR 2026</strong> in Rio de Janeiro and presented our paper <em>INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy!</em>
 
+        
+          <a href="/#publications#inosgd" class="update-arrow-link js-update-link">→</a>
         
       </span>
     </li>
@@ -213,7 +215,7 @@ Final Year Project supervised by Prof. <a href="https://www.comp.nus.edu.sg/cs/p
 
 <div class="pub-note"> † denotes equal contribution</div>
 
-<div class="pub-item">
+<div class="pub-item" id="nash">
   <div class="pub-title">Is Data Shapley Not Better than Random in Data Selection? Ask NASH
 </div>
   <div class="pub-authors">Xiao Tian<sup>†</sup>, <strong>Jue Fan</strong><sup>†</sup>, Rachael Hwee Ling Sim, Wang Zixuan, Nancy F. Chen, Bryan Kian Hsiang Low
@@ -225,7 +227,7 @@ Final Year Project supervised by Prof. <a href="https://www.comp.nus.edu.sg/cs/p
   </div>
 </div>
 
-<div class="pub-item">
+<div class="pub-item" id="dvf">
   <div class="pub-title">Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning
 </div>
   <div class="pub-authors">Rachael Hwee Ling Sim<sup>†</sup>, <strong>Jue Fan</strong><sup>†</sup>, Xiao Tian, Xinyi Xu, Patrick Jaillet, Bryan Kian Hsiang Low
@@ -237,7 +239,7 @@ Final Year Project supervised by Prof. <a href="https://www.comp.nus.edu.sg/cs/p
   </div>
 </div>
 
-<div class="pub-item">
+<div class="pub-item" id="inosgd">
   <div class="pub-title">INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy
 </div>
   <div class="pub-authors">Xiao Tian, <strong>Jue Fan</strong>, Rachael Hwee Ling Sim, Bryan Kian Hsiang Low
@@ -249,7 +251,7 @@ Final Year Project supervised by Prof. <a href="https://www.comp.nus.edu.sg/cs/p
   </div>
 </div>
 
-<div class="pub-item">
+<div class="pub-item" id="dads">
   <div class="pub-title">Deletion-Anticipative Data Selection with a Limited Budget
 </div>
   <div class="pub-authors">Rachael Hwee Ling Sim, <strong>Jue Fan</strong>, Xiao Tian, Patrick Jaillet, Bryan Kian Hsiang Low
@@ -261,7 +263,7 @@ Final Year Project supervised by Prof. <a href="https://www.comp.nus.edu.sg/cs/p
   </div>
 </div>
 
-<div class="pub-item">
+<div class="pub-item" id="derdava">
   <div class="pub-title">DeRDaVa: Deletion-Robust Data Valuation for Machine Learning
 </div>
   <div class="pub-authors">Xiao Tian, Rachael Hwee Ling Sim, <strong>Jue Fan</strong>, Bryan Kian Hsiang Low
@@ -431,47 +433,89 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('nav a');
 
   function showSection(id) {
-    if (!id || sections.length === 0) return;
+    if (!id) return;
+    const targetSection = document.getElementById(id);
+    if (!targetSection) return;
 
     sections.forEach(s => s.classList.remove('active'));
     navLinks.forEach(a => a.classList.remove('active'));
     
-    const target = document.getElementById(id);
-    if (target) target.classList.add('active');
-    
+    targetSection.classList.add('active');
     const link = document.querySelector(`nav a[data-section="${id}"]`);
     if (link) link.classList.add('active');
   }
 
-  // Listen for clicks on the WHOLE document
-  document.addEventListener('click', (e) => {
-    // Look for any link that has a data-section attribute (sidebar OR arrow)
-    const link = e.target.closest('a[data-section]') || e.target.closest('.js-update-link');
-    
-    if (!link) return;
-
-    const sectionId = link.getAttribute('data-section') || 
-                      link.getAttribute('href').split('#')[1];
-    const target = document.getElementById(sectionId);
-
-    // IF the target exists on this page (Home Page)
-    if (target) {
-      e.preventDefault();
-      showSection(sectionId);
-      history.pushState(null, null, '#' + sectionId);
-    } 
-    // IF target doesn't exist (Gallery Page), do NOTHING. 
-    // The browser will naturally follow the href and redirect.
+  // 1. Sidebar Navigation
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const sectionId = link.getAttribute('data-section');
+      if (document.getElementById(sectionId)) {
+        e.preventDefault();
+        showSection(sectionId);
+        history.pushState(null, null, '#' + sectionId);
+      }
+    });
   });
 
-  // Handle Initial Load
-  const initialHash = window.location.hash.substring(1);
-  if (sections.length > 0) {
-    if (initialHash && document.getElementById(initialHash)) {
-      showSection(initialHash);
-    } else {
-      showSection('about');
+  // 2. Update Arrow Logic (With Self-Cleaning Highlight)
+  document.addEventListener('click', (e) => {
+    const arrow = e.target.closest('.js-update-link');
+    if (!arrow) return;
+
+    const href = arrow.getAttribute('href');
+    if (!href.includes('#')) return;
+
+    const parts = href.split('#'); 
+    const sectionId = parts[1]; 
+    const paperId = parts[2];   
+
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      e.preventDefault();
+      showSection(sectionId);
+      history.pushState(null, null, '#' + (paperId || sectionId));
+
+      if (paperId) {
+        const paperElement = document.getElementById(paperId);
+        if (paperElement) {
+          // WIPE: Remove highlight from any other items immediately
+          document.querySelectorAll('.pub-highlight').forEach(el => el.classList.remove('pub-highlight'));
+
+          setTimeout(() => {
+            paperElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // ADD HIGHLIGHT
+            paperElement.classList.add('pub-highlight');
+
+            // SELF-CLEAN: Remove the class as soon as the animation finishes
+            paperElement.addEventListener('animationend', () => {
+              paperElement.classList.remove('pub-highlight');
+            }, { once: true }); // { once: true } ensures the listener cleans itself up too
+          }, 100);
+        }
+      }
     }
+  });
+
+  // 3. Handle Page Load
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const targetItem = document.getElementById(hash);
+    if (targetItem) {
+      const parentSection = targetItem.closest('.section');
+      if (parentSection) {
+        showSection(parentSection.id);
+        setTimeout(() => {
+          targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetItem.classList.add('pub-highlight');
+          targetItem.addEventListener('animationend', () => {
+            targetItem.classList.remove('pub-highlight');
+          }, { once: true });
+        }, 600);
+      }
+    }
+  } else {
+    showSection('about');
   }
 });
 </script>

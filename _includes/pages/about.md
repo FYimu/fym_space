@@ -43,7 +43,7 @@
       <span class="update-text">
         {{ update.text | markdownify | replace: '<p>', '' | replace: '</p>', '' }}
         {% if update.link %}
-          <a href="{{ update.link | relative_url }}" class="update-arrow-link js-update-link">→</a>
+          <a href="{{ update.link | relative_url }}#{{ update.paper_id }}" class="update-arrow-link js-update-link">→</a>
         {% endif %}
       </span>
     </li>

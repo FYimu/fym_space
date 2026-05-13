@@ -1,32 +1,37 @@
-- title: "Is Data Shapley Not Better than Random in Data Selection? Ask NASH"
+- id: nash
+  title: "Is Data Shapley Not Better than Random in Data Selection? Ask NASH"
   authors: |
     Xiao Tian<sup>†</sup>, **Jue Fan**<sup>†</sup>, Rachael Hwee Ling Sim, Wang Zixuan, Nancy F. Chen, Bryan Kian Hsiang Low
   venue: |
     ICML **Spotlight** 2026 &#124; Acceptance Rate: **2.2%**
   pdf: "https://arxiv.org/pdf/2605.10684"
 
-- title: "Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning"
+- id: dvf
+  title: "Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning"
   authors: |
     Rachael Hwee Ling Sim<sup>†</sup>, **Jue Fan**<sup>†</sup>, Xiao Tian, Xinyi Xu, Patrick Jaillet, Bryan Kian Hsiang Low
   venue: |
     ICML **Spotlight** 2026 &#124; Acceptance Rate: **2.2%**
   pdf: "https://arxiv.org/pdf/2605.11889"
 
-- title: "INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy"
+- id: inosgd
+  title: "INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy"
   authors: |
     Xiao Tian, **Jue Fan**, Rachael Hwee Ling Sim, Bryan Kian Hsiang Low
   venue: |
     ICLR Poster 2026 &#124; Acceptance Rate: **28.18%**
   pdf: "https://openreview.net/pdf?id=HMapYMkcrl"
 
-- title: "Deletion-Anticipative Data Selection with a Limited Budget"
+- id: dads
+  title: "Deletion-Anticipative Data Selection with a Limited Budget"
   authors: |
     Rachael Hwee Ling Sim, **Jue Fan**, Xiao Tian, Patrick Jaillet, Bryan Kian Hsiang Low
   venue: |
     ICML Poster 2024 &#124; Acceptance Rate: **27.50%**
   pdf: "https://openreview.net/pdf?id=ecvuJWE1YY"
 
-- title: "DeRDaVa: Deletion-Robust Data Valuation for Machine Learning"
+- id: derdava
+  title: "DeRDaVa: Deletion-Robust Data Valuation for Machine Learning"
   authors: |
     Xiao Tian, Rachael Hwee Ling Sim, **Jue Fan**, Bryan Kian Hsiang Low
   venue: |

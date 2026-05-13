@@ -64,7 +64,7 @@
   position: relative;
   top: -2px;
   transition: transform 0.2s ease, color 0.2s ease;
-  color: var(--warm-gray); /* Match your date color */
+  color: var(--warm-gray) !important;
 }
 
 .update-arrow {
@@ -72,12 +72,13 @@
   height: 14px;
 }
 
-/* Hover effects */
-.update-item:hover .update-arrow-link {
-  transform: translateX(3px); /* Arrow nudges forward on hover */
-  color: var(--rose); /* Or your preferred highlight color */
-}
 
 .update-arrow-link:hover {
-  color: var(--ink) !important;
+  color: var(--rose) !important;
+  transform: translateX(3px);
+}
+
+.update-arrow-link:visited {
+  color: var(--warm-gray) !important; /* Force your specific blue */
+  text-decoration: none;
 }

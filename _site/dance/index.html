@@ -78,47 +78,89 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('nav a');
 
   function showSection(id) {
-    if (!id || sections.length === 0) return;
+    if (!id) return;
+    const targetSection = document.getElementById(id);
+    if (!targetSection) return;
 
     sections.forEach(s => s.classList.remove('active'));
     navLinks.forEach(a => a.classList.remove('active'));
     
-    const target = document.getElementById(id);
-    if (target) target.classList.add('active');
-    
+    targetSection.classList.add('active');
     const link = document.querySelector(`nav a[data-section="${id}"]`);
     if (link) link.classList.add('active');
   }
 
-  // Listen for clicks on the WHOLE document
-  document.addEventListener('click', (e) => {
-    // Look for any link that has a data-section attribute (sidebar OR arrow)
-    const link = e.target.closest('a[data-section]') || e.target.closest('.js-update-link');
-    
-    if (!link) return;
-
-    const sectionId = link.getAttribute('data-section') || 
-                      link.getAttribute('href').split('#')[1];
-    const target = document.getElementById(sectionId);
-
-    // IF the target exists on this page (Home Page)
-    if (target) {
-      e.preventDefault();
-      showSection(sectionId);
-      history.pushState(null, null, '#' + sectionId);
-    } 
-    // IF target doesn't exist (Gallery Page), do NOTHING. 
-    // The browser will naturally follow the href and redirect.
+  // 1. Sidebar Navigation
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const sectionId = link.getAttribute('data-section');
+      if (document.getElementById(sectionId)) {
+        e.preventDefault();
+        showSection(sectionId);
+        history.pushState(null, null, '#' + sectionId);
+      }
+    });
   });
 
-  // Handle Initial Load
-  const initialHash = window.location.hash.substring(1);
-  if (sections.length > 0) {
-    if (initialHash && document.getElementById(initialHash)) {
-      showSection(initialHash);
-    } else {
-      showSection('about');
+  // 2. Update Arrow Logic (With Self-Cleaning Highlight)
+  document.addEventListener('click', (e) => {
+    const arrow = e.target.closest('.js-update-link');
+    if (!arrow) return;
+
+    const href = arrow.getAttribute('href');
+    if (!href.includes('#')) return;
+
+    const parts = href.split('#'); 
+    const sectionId = parts[1]; 
+    const paperId = parts[2];   
+
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      e.preventDefault();
+      showSection(sectionId);
+      history.pushState(null, null, '#' + (paperId || sectionId));
+
+      if (paperId) {
+        const paperElement = document.getElementById(paperId);
+        if (paperElement) {
+          // WIPE: Remove highlight from any other items immediately
+          document.querySelectorAll('.pub-highlight').forEach(el => el.classList.remove('pub-highlight'));
+
+          setTimeout(() => {
+            paperElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // ADD HIGHLIGHT
+            paperElement.classList.add('pub-highlight');
+
+            // SELF-CLEAN: Remove the class as soon as the animation finishes
+            paperElement.addEventListener('animationend', () => {
+              paperElement.classList.remove('pub-highlight');
+            }, { once: true }); // { once: true } ensures the listener cleans itself up too
+          }, 100);
+        }
+      }
     }
+  });
+
+  // 3. Handle Page Load
+  const hash = window.location.hash.substring(1);
+  if (hash) {
+    const targetItem = document.getElementById(hash);
+    if (targetItem) {
+      const parentSection = targetItem.closest('.section');
+      if (parentSection) {
+        showSection(parentSection.id);
+        setTimeout(() => {
+          targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetItem.classList.add('pub-highlight');
+          targetItem.addEventListener('animationend', () => {
+            targetItem.classList.remove('pub-highlight');
+          }, { once: true });
+        }, 600);
+      }
+    }
+  } else {
+    showSection('about');
   }
 });
 </script>
