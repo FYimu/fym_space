@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %} 
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="layout">
+    {% include sidebar.html %}
+    <main class="main">
+      {{ content }}
+    </main>
+  </div>
+
+
+  {% include scripts/nav.html %}
+
+  {% if site.data.courses %}
+    {% include scripts/courses.html %}
+  {% endif %}
+
+</body>
+</html>

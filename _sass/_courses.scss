@@ -1,0 +1,130 @@
+.courses-intro { color: var(--ink-soft); margin-bottom: 2.5rem; line-height: 1.7; }
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+.course-card {
+    border: 1px solid var(--border);
+    padding: 1.4rem 1.5rem;
+    background: var(--linen);
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+    position: relative;
+}
+.course-card:hover { transform: translateY(-2px); border-color: var(--border-med); }
+.course-card .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--sage-light);
+    margin-bottom: 1rem;
+}
+.course-card:hover .dot { background: var(--sage); }
+.course-code {
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 0.3rem;
+}
+.course-name {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+.course-term {
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+.course-arrow {
+    position: absolute;
+    right: 1rem; bottom: 1rem;
+    font-size: 13px;
+    color: var(--rose);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.course-card:hover .course-arrow { opacity: 1; }
+
+.course-subhead {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--warm-gray-dk);
+    margin: 3rem 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Thin line following the subhead */
+.course-subhead::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* Add extra spacing after the first grid */
+.courses-grid {
+    margin-bottom: 2rem;
+}
+
+/* Course review panel */
+.course-review-panel { display: none; }
+.course-review-panel.open { display: block; animation: fadeIn 0.3s ease; }
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+.back-btn:hover { color: var(--ink); }
+.review-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.review-header .course-code { margin-bottom: 0.4rem; }
+.review-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+.review-meta { font-size: 15px; color: var(--warm-gray); }
+.review-rating {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0 2rem;
+}
+.rating-item { text-align: center; }
+.rating-label {
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    display: block;
+    margin-bottom: 0.4rem;
+}
+.rating-value {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--rose);
+}
+.review-section { margin-bottom: 2rem; }
+.review-section h3 {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 0.75rem;
+}
+.review-section p { color: var(--ink-soft); line-height: 1.75; font-size: 15px; }

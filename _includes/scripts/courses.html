@@ -1,0 +1,45 @@
+<script>
+  const courseData = {
+    {% for course in site.data.courses %}
+    "{{ course.id }}": {
+      code: "{{ course.code }}",
+      name: "{{ course.name }}",
+      meta: "{{ course.term }}",
+      grade: "Grade: {{ course.grade }}",
+      diff: "{{ course.diff }}",
+      enjoy: "{{ course.enjoy }}",
+      useful: "{{ course.useful }}",
+      overview: {{ course.overview | markdownify | jsonify }},
+      assessment: {{ course.assessment | markdownify | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  };
+
+  document.querySelectorAll('.course-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const d = courseData[card.dataset.course];
+      if (!d) return;
+      document.getElementById('rv-code').textContent = d.code;
+      document.getElementById('rv-name').textContent = d.name;
+      document.getElementById('rv-meta').textContent = d.meta;
+      document.getElementById('rv-diff').textContent = d.diff;
+      document.getElementById('rv-enjoy').textContent = d.enjoy;
+      document.getElementById('rv-useful').textContent = d.useful;
+      document.getElementById('rv-grade').textContent = d.grade;
+      document.getElementById('rv-overview').innerHTML = d.overview;
+      document.getElementById('rv-assessment').innerHTML = d.assessment;
+      document.getElementById('courses-list').style.display = 'none';
+      document.getElementById('course-review-panel').classList.add('open');
+    });
+  });
+
+  document.getElementById('back-btn')?.addEventListener('click', closeCourseReview);
+
+  function closeCourseReview() {
+    const panel = document.getElementById('course-review-panel');
+    const list = document.getElementById('courses-list');
+    if (panel) panel.classList.remove('open');
+    if (list) list.style.display = 'block';
+  }
+
+</script>

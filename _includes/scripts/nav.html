@@ -1,0 +1,50 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  function showSection(id) {
+    if (!id || sections.length === 0) return;
+
+    sections.forEach(s => s.classList.remove('active'));
+    navLinks.forEach(a => a.classList.remove('active'));
+    
+    const target = document.getElementById(id);
+    if (target) target.classList.add('active');
+    
+    const link = document.querySelector(`nav a[data-section="${id}"]`);
+    if (link) link.classList.add('active');
+  }
+
+  // Listen for clicks on the WHOLE document
+  document.addEventListener('click', (e) => {
+    // Look for any link that has a data-section attribute (sidebar OR arrow)
+    const link = e.target.closest('a[data-section]') || e.target.closest('.js-update-link');
+    
+    if (!link) return;
+
+    const sectionId = link.getAttribute('data-section') || 
+                      link.getAttribute('href').split('#')[1];
+    const target = document.getElementById(sectionId);
+
+    // IF the target exists on this page (Home Page)
+    if (target) {
+      e.preventDefault();
+      showSection(sectionId);
+      history.pushState(null, null, '#' + sectionId);
+    } 
+    // IF target doesn't exist (Gallery Page), do NOTHING. 
+    // The browser will naturally follow the href and redirect.
+  });
+
+  // Handle Initial Load
+  const initialHash = window.location.hash.substring(1);
+  if (sections.length > 0) {
+    if (initialHash && document.getElementById(initialHash)) {
+      showSection(initialHash);
+    } else {
+      showSection('about');
+    }
+  }
+});
+</script>

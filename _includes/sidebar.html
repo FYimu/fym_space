@@ -1,0 +1,26 @@
+<aside class="sidebar">
+  <div class="sidebar-name">{{ 'FAN Jue' }}</div>
+  <div class="sidebar-role">{{ site.description }}</div>
+  <div class="sidebar-divider"></div>
+
+  <nav id="nav">
+    <a href="{{ '/#about' | relative_url }}" data-section="about" class="active">About</a>
+    <a href="{{ '/#education' | relative_url }}" data-section="education">Education</a>
+    <a href="{{ '/#publications' | relative_url }}" data-section="publications">Publications</a>
+    <a href="{{ '/#teaching' | relative_url }}" data-section="teaching">Teaching</a>
+    <a href="{{ '/#courses' | relative_url }}" data-section="courses">Courses</a> 
+    <a href="{{ '/#hobbies' | relative_url }}" data-section="hobbies">Side Missions</a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="sidebar-links">
+      <a href="spaceholder" target="_blank">CV</a>
+      <a href="https://www.linkedin.com/in/jue-fan-a66a541b6/" target="_blank">LinkedIn</a>
+      <a href="mailto:{{ site.email }}">Email</a>
+      <a href="https://github.com/FYimu" target="_blank">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=x6ZbPaQAAAAJ&hl=en" target="_blank">Scholar</a>
+      
+    </div>
+    <div>© {{ 'now' | date: "%Y" }} {{ 'FAN JUE' }}</div>
+  </div>
+</aside>

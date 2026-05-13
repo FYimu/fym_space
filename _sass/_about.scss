@@ -1,0 +1,40 @@
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 2.5rem;
+    align-items: start;
+    width: 100%;
+    font-size: 15px;
+}
+.about-photo {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    background: var(--sage-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    color: var(--sage-dark);
+    text-transform: uppercase;
+    border: 1px solid var(--border-med);
+    flex-shrink: 0;
+}
+.about-text p { color: var(--ink-soft); margin-bottom: 1.2rem; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-info {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1.5rem;
+    font-size: 13px;
+}
+.about-info .label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    padding-top: 2px;
+}
+.about-info .value { color: var(--ink-soft); }

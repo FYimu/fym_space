@@ -1,0 +1,83 @@
+.updates-container {
+  margin-top: 5rem;
+  padding: 2.5rem;
+  background: var(--linen); /* Subtle background box */
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.updates-header {
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* The thin line next to the title */
+.updates-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-med);
+}
+
+.updates-list {
+  list-style: none;
+}
+
+.updates-list li {
+  font-size: 15px;
+  color: var(--warm-gray);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1.5rem; /* Space between date and text */
+  line-height: 1.5;
+}
+
+.updates-list li:last-child {
+  margin-bottom: 0;
+}
+
+.update-date {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose);
+  width: 70px; /* Keeps dates aligned */
+  font-weight: 700;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.update-text strong {
+  font-weight: 700;
+}
+
+.update-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left:8px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: var(--warm-gray); /* Match your date color */
+}
+
+.update-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+/* Hover effects */
+.update-item:hover .update-arrow-link {
+  transform: translateX(3px); /* Arrow nudges forward on hover */
+  color: var(--rose); /* Or your preferred highlight color */
+}
+
+.update-arrow-link:hover {
+  color: var(--ink) !important;
+}

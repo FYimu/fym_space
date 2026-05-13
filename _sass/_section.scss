@@ -1,0 +1,35 @@
+.section { 
+    display: none; 
+    width: 100%;
+    max-width: 900px;
+    margin: 0;
+    animation: fadeIn 0.35s ease; 
+}
+.section.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Section Header ──────────────────────────────── */
+.section-header {
+    margin-bottom: 3rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+.section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 400;
+    margin-bottom: 0.6rem;
+}
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1.1;
+}

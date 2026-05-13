@@ -1,0 +1,13 @@
+
+a.person-link {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-thickness: 1px; /* Makes the underline look clean and sharp */
+  text-underline-offset: 3px; /* Pushes the underline slightly below the letters */
+  color: var(--slate);
+  transition: color 0.2s;
+}
+
+a.person-link:hover {
+  color: var(--rose); /* Gives it a nice pop of color when hovered */
+}

@@ -1,0 +1,80 @@
+    .sidebar {
+      position: sticky;
+      top: 0; 
+      width: 250px;
+      height: 100vh;
+      background: var(--linen);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 2rem;
+      z-index: 100;
+    }
+
+    .sidebar-name {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+    }
+
+    .sidebar-role {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--warm-gray);
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+    }
+
+    .sidebar-divider {
+      width: 28px;
+      height: 1px;
+      background: var(--rose);
+      margin-bottom: 2.5rem;
+    }
+
+    nav { flex: 1; }
+
+    #nav a {
+      display: block;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--ink-soft);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    #nav a:hover, #nav a.active {
+      color: var(--ink);
+      border-bottom-color: var(--sage);
+      text-decoration: none;
+    }
+    #nav a.active { color: var(--sage); font-weight: 500; }
+    .sidebar-footer {
+      margin-top: auto;
+      font-size: 13px;
+      color: var(--warm-gray);
+      letter-spacing: 0.06em;
+    }
+
+    .sidebar-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .sidebar-links a {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      transition: color 0.2s;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid var(--slate-light);
+      border-radius: 2px;
+    }
+    .sidebar-links a:hover { color: var(--ink); border-color: var(--rose); text-decoration: none;}
