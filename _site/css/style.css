@@ -59,6 +59,8 @@ nav { flex: 1; }
 
 .about-info .value { color: var(--ink-soft); }
 
+.about-nav:visited { color: var(--ink-soft) !important; }
+
 .edu-item { display: grid; grid-template-columns: 90px 1fr; gap: 0 2rem; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
 
 .edu-item:last-child { border-bottom: none; margin-bottom: 0; }

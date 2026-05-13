@@ -38,3 +38,7 @@
     padding-top: 2px;
 }
 .about-info .value { color: var(--ink-soft); }
+
+.about-nav:visited {
+    color: var(--ink-soft) !important;
+}

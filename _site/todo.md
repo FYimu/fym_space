@@ -12,3 +12,7 @@
 
 #### Teaching
 - [ ] add rating
+
+#### Debug
+- [ ] link to side missions not working @ About Me
+

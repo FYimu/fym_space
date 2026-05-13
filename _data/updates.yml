@@ -9,6 +9,29 @@
   paper_id: "dvf"
 
 - date: "Apr 2026"
-  text: "🇧🇷 I attended **ICLR 2026** in Rio de Janeiro and presented our paper _INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy!_"
+  text: "🇧🇷 I attended **ICLR 2026** in Rio de Janeiro!"
+
+- date: "Feb 2026"
+  text: "🎉 Our paper titled _INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy!_ has been accepted as a poster at **ICLR 2026**. See you in Rio!"
   link: "#publications"
   paper_id: "inosgd"
+
+- date: "Jul 2025"
+  text: "🎓 I attended commencement ceremonies for my Bachelor's degrees!"
+
+- date: "Jan 2025"
+  text: "🎓 I was officially conferred my Bachelor's degrees!"
+
+- date: "Jan 2025"
+  text: "📚 Decided that two degrees from NUS weren't enough, so I started round three - the PhD!"
+
+- date: "Nov 2024"
+  text: "🏆 I received the <strike>A*STAR Computing and Information Science (ACIS)</strike> AGS (Computing) Scholarship for my PhD studies. Grateful for the support!"
+
+- date: "Nov 2024"
+  text: "🏆 I was honored to be selected for the NUS Presidential Graduate Fellowship for my PhD studies."
+
+- date: "Oct 2024"
+  text: "🏆 I was happy to receive the NUS Research Scholarship for my PhD studies."
+
+
