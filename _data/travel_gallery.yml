@@ -1,0 +1,15 @@
+- image: "travel1.jpg"
+  caption: "🇧🇷 Rio de Janeiro | Favela Rocinha"
+  category: "travel"
+
+- image: "travel2.jpg"
+  caption: "🇬🇧 London | The Shard"
+  category: "travel"
+
+- image: "travel3.jpg"
+  caption: "🇯🇵 Otaru | Funamizaka"
+  category: "travel"
+
+- image: "travel4.jpg"
+  caption: "🇨🇳 Chengdu | Jiuzhaigou"
+  category: "travel"

@@ -1,0 +1,35 @@
+.gallery-item {
+  position: relative; /* Needed to anchor the label */
+  margin-bottom: 20px;
+}
+
+.gallery-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  z-index: 5;
+  color: white;
+  pointer-events: none; /* Clicking the label clicks the image */
+}
+
+/* Specific Colors for your Missions */
+.label-travel {
+  background-color: #8e9aab; /* A muted Morandi Blue-Grey */
+}
+
+.label-dance {
+  background-color: #b48c8c; /* Your Morandi Rose/Red */
+}
+
+.gallery-caption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+}

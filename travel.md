@@ -9,13 +9,19 @@ permalink: /travel/
   <h1 class="section-title">Travelling</h1>
 </div>
 
-<a href="/" class="back-btn">← Back to Home</a>
+<a href="/#hobbies" class="back-btn">← Back to Side Missions </a>
 
-<p class="gallery-intro">A collection of places I have visited, exploring the geometry of everyday architecture around the world.</p>
+<p class="gallery-intro">A visual journal of structural and natural design, capturing the geometry of the places I’ve wandered.</p>
 
 <div class="gallery-grid">
-  <img src="/assets/photos/travel1.jpg" alt="Tokyo Architecture" class="gallery-img">
-  <img src="/assets/photos/travel2.jpg" alt="Kyoto Streets" class="gallery-img">
-  <img src="/assets/photos/travel3.jpg" alt="Singapore Skyline" class="gallery-img">
-  <img src="/assets/photos/travel4.jpg" alt="London Underground" class="gallery-img">
+  {% for item in site.data.travel_gallery %}
+  <figure class="gallery-item">
+
+    <img src="{{ '/assets/gallery/' | append: item.image | relative_url }}" alt="{{ item.caption }}">
+    
+    {% if item.caption %}
+      <figcaption class="gallery-caption">{{ item.caption }}</figcaption>
+    {% endif %}
+  </figure>
+  {% endfor %}
 </div>

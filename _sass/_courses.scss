@@ -87,6 +87,7 @@
     transition: color 0.2s;
 }
 .back-btn:hover { color: var(--ink); }
+.back-btn:visited { color: var(--warm-gray) !important; }
 .review-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;

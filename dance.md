@@ -9,12 +9,19 @@ permalink: /dance/
   <h1 class="section-title">Dancing</h1>
 </div>
 
-<a href="/" class="back-btn">← Back to Home</a>
+<a href="/#hobbies" class="back-btn">← Back to Side Missions </a>
 
-<p class="gallery-intro">Moments captured in motion.</p>
+<p class="gallery-intro">A celebration of frames, feel, and footwork: documenting the expressive power of Latin and Ballroom dance.</p>
 
 <div class="gallery-grid">
-  <img src="/assets/photos/dance1.jpg" alt="Dance Performance 1" class="gallery-img">
-  <img src="/assets/photos/dance2.jpg" alt="Dance Performance 2" class="gallery-img">
-  <img src="/assets/photos/dance3.jpg" alt="Studio Practice" class="gallery-img">
+  {% for item in site.data.dance_gallery %}
+  <figure class="gallery-item">
+
+    <img src="{{ '/assets/gallery/' | append: item.image | relative_url }}" alt="{{ item.caption }}">
+    
+    {% if item.caption %}
+      <figcaption class="gallery-caption">{{ item.caption }}</figcaption>
+    {% endif %}
+  </figure>
+  {% endfor %}
 </div>
