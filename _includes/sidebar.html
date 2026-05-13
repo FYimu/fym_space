@@ -4,12 +4,12 @@
   <div class="sidebar-divider"></div>
 
   <nav id="nav">
-    <a href="{{ '/#about' | relative_url }}" data-section="about" class="active">About</a>
+    <a href="{{ '/#about' | relative_url }}" data-section="about" class="{% if page.active_nav == 'about' or page.url == '/' %}active{% endif %}">About</a>
     <a href="{{ '/#education' | relative_url }}" data-section="education">Education</a>
     <a href="{{ '/#publications' | relative_url }}" data-section="publications">Publications</a>
     <a href="{{ '/#teaching' | relative_url }}" data-section="teaching">Teaching</a>
     <a href="{{ '/#courses' | relative_url }}" data-section="courses">Courses</a> 
-    <a href="{{ '/#hobbies' | relative_url }}" data-section="hobbies">Side Missions</a>
+    <a href="{{ '/#hobbies' | relative_url }}" data-section="hobbies" class="{% if page.active_nav == 'hobbies' %}active{% endif %}">Side Missions</a>
   </nav>
 
   <div class="sidebar-footer">

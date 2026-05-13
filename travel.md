@@ -2,6 +2,7 @@
 layout: default
 title: Travel Gallery
 permalink: /travel/
+active_nav: hobbies
 ---
 
 <div class="section-header">
@@ -21,6 +22,9 @@ permalink: /travel/
     
     {% if item.caption %}
       <figcaption class="gallery-caption">{{ item.caption }}</figcaption>
+    {% endif %}
+    {% if item.date %}
+      <figcaption class="gallery-date">{{ item.date }}</figcaption>
     {% endif %}
   </figure>
   {% endfor %}

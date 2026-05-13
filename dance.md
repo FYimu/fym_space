@@ -2,6 +2,7 @@
 layout: default
 title: Dance Gallery
 permalink: /dance/
+active_nav: hobbies
 ---
 
 <div class="section-header">
