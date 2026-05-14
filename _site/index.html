@@ -57,7 +57,7 @@
     </div>
 
     <div class="about-photo">
-      PHOTO
+        <img src="/assets/gallery/me.jpg" />
     </div>
   </div>
 
@@ -72,11 +72,12 @@
         <span class="value">Data-Efficient AI, Trustworthy AI</span>
       </div>
 
+
 <div class="updates-container">
   <div class="updates-header">Latest Updates</div>
-  <ul class="updates-list">
+  <ul class="updates-list" id="updates-list">
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">May 2026</span>
       <span class="update-text">
         🎉 Our paper titled <em>Is Data Shapley Not Better than Random in Data Selection? Ask NASH</em> has been accepted as a ✨<strong>spotlight</strong>✨ paper at <strong>ICML 2026</strong>. See you in Seoul!
@@ -87,7 +88,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">May 2026</span>
       <span class="update-text">
         🎉 Our paper titled <em>Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning</em> has been accepted as a ✨<strong>spotlight</strong>✨ paper at <strong>ICML 2026</strong>. See you in Seoul!
@@ -98,7 +99,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Apr 2026</span>
       <span class="update-text">
         🇧🇷 I attended <strong>ICLR 2026</strong> in Rio de Janeiro!
@@ -107,7 +108,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Feb 2026</span>
       <span class="update-text">
         🎉 Our paper titled <em>INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy!</em> has been accepted as a poster at <strong>ICLR 2026</strong>. See you in Rio!
@@ -118,7 +119,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Jul 2025</span>
       <span class="update-text">
         🎓 I attended commencement ceremonies for my Bachelor’s degrees. Graduated just in time for the NUS120 limited-edition swag!
@@ -127,7 +128,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Jan 2025</span>
       <span class="update-text">
         🎓 I was officially conferred my Bachelor’s degrees!
@@ -136,7 +137,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Jan 2025</span>
       <span class="update-text">
         📚 Decided that two degrees from NUS weren’t enough, so I started round three - the PhD!
@@ -145,7 +146,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Dec 2024</span>
       <span class="update-text">
         📜 I was placed on the Dean’s List for Bachelor of Science!
@@ -154,7 +155,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Oct 2024</span>
       <span class="update-text">
         🏆 I received the <strike>A*STAR Computing and Information Science (ACIS)</strike> AGS (Computing) Scholarship for my PhD studies. Grateful for the support!
@@ -163,7 +164,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item ">
       <span class="update-date">Oct 2024</span>
       <span class="update-text">
         🏆 I was honored to be selected for the NUS Presidential Graduate Fellowship for my PhD studies.
@@ -172,7 +173,7 @@
       </span>
     </li>
     
-    <li>
+    <li class="update-item is-collapsed">
       <span class="update-date">Sep 2024</span>
       <span class="update-text">
         🏆 I was happy to receive the NUS Research Scholarship for my PhD studies.
@@ -182,6 +183,12 @@
     </li>
     
   </ul>
+
+  
+    <button id="toggle-updates-btn" class="updates-toggle">
+      Show More
+    </button>
+  
 </div>
 </section>
 
@@ -570,6 +577,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } else {
     showSection('about');
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggle-updates-btn');
+  const updatesList = document.getElementById('updates-list');
+
+  if (toggleBtn && updatesList) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = updatesList.classList.toggle('is-expanded');
+      
+      // Update button text
+      toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
+      
+      // Optional: If collapsing, scroll back up to the updates header
+      if (!isExpanded) {
+        document.querySelector('.updates-header').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 });
 </script>

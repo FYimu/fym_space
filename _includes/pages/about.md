@@ -19,7 +19,7 @@
     </div>
 
     <div class="about-photo">
-      PHOTO
+        <img src="{{ '/assets/gallery/me.jpg'" alt="PHOTO"}}">
     </div>
   </div>
 
@@ -34,11 +34,12 @@
         <span class="value">Data-Efficient AI, Trustworthy AI</span>
       </div>
 
+
 <div class="updates-container">
   <div class="updates-header">Latest Updates</div>
-  <ul class="updates-list">
+  <ul class="updates-list" id="updates-list">
     {% for update in site.data.updates %}
-    <li>
+    <li class="update-item {% if forloop.index > 10 %}is-collapsed{% endif %}">
       <span class="update-date">{{ update.date }}</span>
       <span class="update-text">
         {{ update.text | markdownify | replace: '<p>', '' | replace: '</p>', '' }}
@@ -49,4 +50,10 @@
     </li>
     {% endfor %}
   </ul>
+
+  {% if site.data.updates.size > 10 %}
+    <button id="toggle-updates-btn" class="updates-toggle">
+      Show More
+    </button>
+  {% endif %}
 </div>

@@ -47,6 +47,7 @@
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add relevant courses and link to the courses</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add in transcript</li>
   <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />add award section</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />put in cv</li>
 </ul>
 
 <h4 id="teaching">Teaching</h4>
@@ -154,6 +155,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } else {
     showSection('about');
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggle-updates-btn');
+  const updatesList = document.getElementById('updates-list');
+
+  if (toggleBtn && updatesList) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = updatesList.classList.toggle('is-expanded');
+      
+      // Update button text
+      toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
+      
+      // Optional: If collapsing, scroll back up to the updates header
+      if (!isExpanded) {
+        document.querySelector('.updates-header').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 });
 </script>

@@ -8,7 +8,7 @@
 - [ ] add relevant courses and link to the courses
 - [ ] add in transcript
 - [ ] add award section
-
+- [ ] put in cv
 
 #### Teaching
 - [ ] add rating

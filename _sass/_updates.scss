@@ -8,7 +8,8 @@
 
 .updates-header {
   font-size: 1.5rem;
-  color: var(--ink);
+  color: var(--warm-gray);
+  font-weight: 700;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -24,6 +25,10 @@
 }
 
 .updates-list {
+  overflow-y: hidden;
+  padding-right: 10px; /* Creates breathing room so the scrollbar doesn't overlap text */
+  margin: 0;
+  padding-left: 0;
   list-style: none;
 }
 
@@ -36,8 +41,59 @@
   line-height: 1.5;
 }
 
+.updates-list.is-expanded .update-item.is-collapsed {
+  display: flex; /* Or however your list items are displayed */
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.updates-list.is-expanded {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
 .updates-list li:last-child {
   margin-bottom: 0;
+}
+
+.update-item.is-collapsed {
+  display: none;
+}
+
+.updates-toggle {
+  background: none;
+  border: none;
+  color: var(--warm-gray); /* Morandi Grey */
+  font-size: 0.8rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-top: 15px;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.updates-toggle:hover {
+  color: var(--rose);
+  border-bottom: 1px solid var(--rose-light);
+}
+
+.updates-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.updates-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.updates-list::-webkit-scrollbar-thumb {
+  background-color: var(--cream); /* Very soft grey */
+  border-radius: 10px;
+}
+
+.updates-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--warm-gray); /* Darker Morandi grey on hover */
 }
 
 .update-date {
@@ -81,4 +137,9 @@
 .update-arrow-link:visited {
   color: var(--warm-gray);
   text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }

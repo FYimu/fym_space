@@ -54,7 +54,7 @@
       <figcaption class="gallery-caption">🇧🇷 Rio de Janeiro | Favela Rocinha</figcaption>
     
     
-      <figcaption class="gallery-date">Apr 2026</figcaption>
+      <figcaption class="update-date">Apr 2026</figcaption>
     
   </figure>
   
@@ -66,7 +66,7 @@
       <figcaption class="gallery-caption">🇬🇧 London | The Shard</figcaption>
     
     
-      <figcaption class="gallery-date">Apr 2026</figcaption>
+      <figcaption class="update-date">Apr 2026</figcaption>
     
   </figure>
   
@@ -78,7 +78,7 @@
       <figcaption class="gallery-caption">🇯🇵 Otaru | Funamizaka</figcaption>
     
     
-      <figcaption class="gallery-date">Dec 2025</figcaption>
+      <figcaption class="update-date">Dec 2025</figcaption>
     
   </figure>
   
@@ -90,7 +90,7 @@
       <figcaption class="gallery-caption">🇨🇳 Chengdu | Jiuzhaigou</figcaption>
     
     
-      <figcaption class="gallery-date">Dec 2024</figcaption>
+      <figcaption class="update-date">Dec 2024</figcaption>
     
   </figure>
   
@@ -189,6 +189,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } else {
     showSection('about');
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('toggle-updates-btn');
+  const updatesList = document.getElementById('updates-list');
+
+  if (toggleBtn && updatesList) {
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = updatesList.classList.toggle('is-expanded');
+      
+      // Update button text
+      toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
+      
+      // Optional: If collapsing, scroll back up to the updates header
+      if (!isExpanded) {
+        document.querySelector('.updates-header').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   }
 });
 </script>

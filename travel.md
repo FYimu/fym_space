@@ -24,7 +24,7 @@ active_nav: hobbies
       <figcaption class="gallery-caption">{{ item.caption }}</figcaption>
     {% endif %}
     {% if item.date %}
-      <figcaption class="gallery-date">{{ item.date }}</figcaption>
+      <figcaption class="update-date">{{ item.date }}</figcaption>
     {% endif %}
   </figure>
   {% endfor %}
