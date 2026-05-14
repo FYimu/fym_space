@@ -1,21 +1,23 @@
 ---
 ---
 
-/* 1. Base */
-@import "variables";
-@import "reset";
-@import "layout";
-@import "people";
+/* 1. Base Styles */
+@import "base/variables";
+@import "base/reset";
+@import "base/layout";
 
-/* 2. Components */
-@import "sidebar";
-@import "about";
-@import "education";
-@import "publications";
-@import "courses";
-@import "teaching";
-@import "hobbies";
-@import "updates";
-@import "section";
-@import "main";
-@import "gallery";
+/* 2. Component Styles */
+@import "components/sidebar";
+@import "components/about";
+@import "components/section";
+@import "components/education";
+@import "components/publications";
+@import "components/courses";
+@import "components/teaching";
+@import "components/hobbies";
+@import "components/updates";
+@import "components/gallery";
+@import "components/people";
+
+/* 3. Utilities */
+@import "utilities/main";

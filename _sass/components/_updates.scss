@@ -1,0 +1,147 @@
+.updates-container {
+  margin-top: 5rem;
+  padding: 2.5rem;
+  background: var(--linen); /* Subtle background box */
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.updates-header {
+  font-size: 1.5rem;
+  color: var(--warm-gray);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* The thin line next to the title */
+.updates-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-med);
+}
+
+.updates-list {
+  overflow-y: hidden;
+  padding-right: 10px; /* Creates breathing room so the scrollbar doesn't overlap text */
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.updates-list li {
+  font-size: 15px;
+  color: var(--warm-gray);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1.5rem; /* Space between date and text */
+  line-height: 1.5;
+}
+
+.updates-list.is-expanded .update-item.is-collapsed {
+  display: flex; /* Or however your list items are displayed */
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.updates-list.is-expanded {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.updates-list li:last-child {
+  margin-bottom: 0;
+}
+
+.update-item.is-collapsed {
+  display: none;
+}
+
+.updates-toggle {
+  background: none;
+  border: none;
+  color: var(--warm-gray); /* Morandi Grey */
+  font-size: 0.8rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-top: 15px;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.updates-toggle:hover {
+  color: var(--rose);
+  border-bottom: 1px solid var(--rose-light);
+}
+
+.updates-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.updates-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.updates-list::-webkit-scrollbar-thumb {
+  background-color: var(--cream); /* Very soft grey */
+  border-radius: 10px;
+}
+
+.updates-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--warm-gray); /* Darker Morandi grey on hover */
+}
+
+.update-date {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rose);
+  width: 70px; /* Keeps dates aligned */
+  font-weight: 700;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.update-text strong {
+  font-weight: 700;
+}
+
+/* ── Update Arrow Link (Highlights Content) ── */
+.update-arrow-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 8px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: var(--rose);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.update-arrow {
+  width: 14px;
+  height: 14px;
+}
+
+.update-arrow-link:hover {
+  color: var(--warm-gray-dk);
+  transform: translateX(4px);
+}
+
+.update-arrow-link:visited {
+  color: var(--rose);
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

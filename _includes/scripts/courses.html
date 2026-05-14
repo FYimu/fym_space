@@ -1,7 +1,8 @@
 <script>
   const courseData = {
-    {% for course in site.data.courses %}
-    "{{ course.id }}": {
+    {% assign courses = site.courses | sort: "order" %}
+    {% for course in courses %}
+    "{{ course.slug }}": {
       code: "{{ course.code }}",
       name: "{{ course.name }}",
       meta: "{{ course.term }}",
@@ -9,7 +10,7 @@
       diff: "{{ course.diff }}",
       enjoy: "{{ course.enjoy }}",
       useful: "{{ course.useful }}",
-      overview: {{ course.overview | markdownify | jsonify }},
+      overview: {{ course.content | markdownify | jsonify }},
       assessment: {{ course.assessment | markdownify | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}

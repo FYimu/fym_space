@@ -1,0 +1,19 @@
+- image: "favela.jpg"
+  caption: "🇧🇷 Rio de Janeiro | Favela Rocinha"
+  category: "travel"
+  date: "Apr 2026"
+
+- image: "shard.jpg"
+  caption: "🇬🇧 London | The Shard"
+  category: "travel"
+  date: "Apr 2026"  
+
+- image: "funamizaka.jpg"
+  caption: "🇯🇵 Otaru | Funamizaka"
+  category: "travel"
+  date: "Dec 2025"
+
+- image: "jiuzhaigou.jpg"
+  caption: "🇨🇳 Chengdu | Jiuzhaigou"
+  category: "travel"
+  date: "Dec 2024"

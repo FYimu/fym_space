@@ -15,7 +15,7 @@ active_nav: hobbies
 <p class="gallery-intro">A visual journal of structural and natural design, capturing the geometry of the places I’ve wandered.</p>
 
 <div class="gallery-grid">
-  {% for item in site.data.travel_gallery %}
+  {% for item in site.data.galleries.travel_gallery %}
   <figure class="gallery-item">
 
     <img src="{{ '/assets/gallery/' | append: item.image | relative_url }}" alt="{{ item.caption }}">

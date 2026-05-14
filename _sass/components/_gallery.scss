@@ -1,0 +1,30 @@
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates flexible columns */
+  gap: 30px; /* Space between photos */
+  align-items: start;
+}
+
+.gallery-item {
+  margin: 0; /* Resets default browser margins on <figure> tags */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.gallery-item img {
+  width: 100%;         
+  max-width: 100%;     
+  height: auto;        
+  aspect-ratio: 3 / 4; /* Forces uniform rectangles */
+  object-fit: cover;   /* Crops beautifully without stretching */
+  display: block;      
+  border-radius: 4px;  
+}
+
+.gallery-caption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  line-height: 1.4;
+}

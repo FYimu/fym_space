@@ -5,11 +5,12 @@
   </div>
 
 <div class="pub-note"> † denotes equal contribution</div>
-{% for pub in site.data.publications %}
-  <div class="pub-item" id="{{ pub.id }}">
-  <div class="pub-title">{{ pub.title | markdownify | remove: '<p>' | remove: '</p>'}}</div>
-  <div class="pub-authors">{{ pub.authors | markdownify | remove: '<p>' | remove: '</p>'}}</div>
-  <div class="pub-venue">{{ pub.venue | markdownify | remove: '<p>' | remove: '</p>'}}</div>
+{% assign publications = site.publications | sort: "order" %}
+{% for pub in publications %}
+  <div class="pub-item" id="{{ pub.slug }}">
+  <div class="pub-title">{% include utils/inline-markdown.html value=pub.title %}</div>
+  <div class="pub-authors">{% include utils/inline-markdown.html value=pub.authors %}</div>
+  <div class="pub-venue">{% include utils/inline-markdown.html value=pub.venue %}</div>
   <div class="pub-links">
     <a class="pub-tag" href="{{ pub.pdf }}" target="_blank" rel="noopener noreferrer">PDF</a>
   </div>

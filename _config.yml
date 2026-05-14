@@ -8,3 +8,15 @@ url: "https://github.com/FYimu"
 #theme: minima # Or leave blank if using custom CSS
 plugins:
   - jekyll-feed
+
+collections:
+  updates:
+    output: false
+  courses:
+    output: false
+  education:
+    output: false
+  teaching:
+    output: false
+  publications:
+    output: false

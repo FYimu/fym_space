@@ -6,9 +6,10 @@
   <div id="courses-list">
     <h3 class="course-subhead">Graduate</h3>
     <div class="courses-grid">
-      {% assign grad_courses = site.data.courses | where: "level", "graduate" %}
+      {% assign courses = site.courses | sort: "order" %}
+      {% assign grad_courses = courses | where: "level", "graduate" %}
       {% for course in grad_courses %}
-      <div class="course-card" data-course="{{ course.id }}">
+      <div class="course-card" data-course="{{ course.slug }}">
         <div class="dot"></div>
         <div class="course-code">{{ course.code }}</div>
         <div class="course-name">{{ course.name }}</div>
@@ -20,9 +21,9 @@
 
     <h3 class="course-subhead">Undergraduate</h3>
     <div class="courses-grid">
-      {% assign undergrad_courses = site.data.courses | where: "level", "undergraduate" %}
+      {% assign undergrad_courses = courses | where: "level", "undergraduate" %}
       {% for course in undergrad_courses %}
-      <div class="course-card" data-course="{{ course.id }}">
+      <div class="course-card" data-course="{{ course.slug }}">
         <div class="dot"></div>
         <div class="course-code">{{ course.code }}</div>
         <div class="course-name">{{ course.name }}</div>

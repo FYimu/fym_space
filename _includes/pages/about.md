@@ -6,11 +6,11 @@
   <div class="about-grid">
     <div class="about-text">
       <p>
-        Hi, Fan Jue (范珏) here! I am a CS PhD student in School of Computing at National University of Singapore (NUS). I am very fortunate to be advised by Prof. {{ site.data.people.bryan }} and Dr. {{ site.data.people.nancy }}. My research primarily focuses on data-efficient AI and answering the question: <em>how much is the data worth?</em>
+        Hi, Fan Jue (范珏) here! I am a CS PhD student in School of Computing at National University of Singapore (NUS). I am very fortunate to be advised by Prof. {{ site.data.profile.people.bryan }} and Dr. {{ site.data.profile.people.nancy }}. My research primarily focuses on data-efficient AI and answering the question: <em>how much is the data worth?</em>
       </p>
 
       <p>
-        Before my doctoral studies, I completed my undergraduate studies at NUS (too), where I obtained a Bachelor of Science (Highest Distinction) degree in Applied Mathematics and a Bachelor of Computing (Highest Distinction) degree in Computer Science. I started my journey in research during Undergraduate Research Opportunities Programme (UROP) and continued in my Final Year Project (FYP). My FYP thesis was supervised by Prof. {{ site.data.people.bryan }} and Prof. {{ site.data.people.jonathan }} and in collaboration with Dr. {{ site.data.people.rachael }} and {{ site.data.people.tx }}.
+        Before my doctoral studies, I completed my undergraduate studies at NUS (too), where I obtained a Bachelor of Science (Highest Distinction) degree in Applied Mathematics and a Bachelor of Computing (Highest Distinction) degree in Computer Science. I started my journey in research during Undergraduate Research Opportunities Programme (UROP) and continued in my Final Year Project (FYP). My FYP thesis was supervised by Prof. {{ site.data.profile.people.bryan }} and Prof. {{ site.data.profile.people.jonathan }} and in collaboration with Dr. {{ site.data.profile.people.rachael }} and {{ site.data.profile.people.tx }}.
       </p>
 
       <p>
@@ -38,11 +38,12 @@
 <div class="updates-container">
   <div class="updates-header">Latest Updates</div>
   <ul class="updates-list" id="updates-list">
-    {% for update in site.data.updates %}
+    {% assign updates = site.updates | sort: "order" %}
+    {% for update in updates %}
     <li class="update-item {% if forloop.index > 10 %}is-collapsed{% endif %}">
-      <span class="update-date">{{ update.date }}</span>
+      <span class="update-date">{{ update.date_label }}</span>
       <span class="update-text">
-        {{ update.text | markdownify | replace: '<p>', '' | replace: '</p>', '' }}
+        {% include utils/inline-markdown.html value=update.content %}
         {% if update.link %}
           <a href="{{ update.link | relative_url }}#{{ update.paper_id }}" class="update-arrow-link js-update-link">→</a>
         {% endif %}
@@ -51,7 +52,7 @@
     {% endfor %}
   </ul>
 
-  {% if site.data.updates.size > 10 %}
+  {% if updates.size > 10 %}
     <button id="toggle-updates-btn" class="updates-toggle">
       Show More
     </button>

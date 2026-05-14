@@ -4,23 +4,24 @@
   </div>
 
   <div class="pub-note"> * denotes expected graduation year </div>
-  {% for edu in site.data.education %}
+  {% assign education_items = site.education | sort: "order" %}
+  {% for edu in education_items %}
   <div class="edu-item">
     <div class="edu-year">{{ edu.year }}</div>
     <div>
-      <div class="edu-degree">{{ edu.degree }}</div>
+      <div class="edu-degree">{% include utils/inline-markdown.html value=edu.degree %}</div>
       <div class="edu-institution">{{ edu.institution }}</div>
       <div class="edu-desc">
-        {% if edu.description %}
-          <div>{{ edu.description | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+        {% if edu.content %}
+          <div>{% include utils/inline-markdown.html value=edu.content %}</div>
         {% endif %}
 
         {% if edu.advisor %}
-          <div>Advisors: {{ edu.advisor | markdownify | remove: '<p>' | remove: '</p>'}}</div>
+          <div>Advisors: {% include utils/inline-markdown.html value=edu.advisor %}</div>
         {% endif %}
         
         {% if edu.courses %}
-          <div>Relevant coursework: {{ edu.courses | markdownify | remove: '<p>' | remove: '</p>'}}</div>
+          <div>Relevant coursework: {% include utils/inline-markdown.html value=edu.courses %}</div>
         {% endif %}
       </div>
     </div>

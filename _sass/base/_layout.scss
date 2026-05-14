@@ -1,0 +1,9 @@
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+    max-width: 1300px;      /* 1. INCREASE THIS to make the whole site wider */
+    width: 100%;
+    margin: 0 auto;         /* 2. CENTERS the site on the screen */
+    background: var(--linen);
+}

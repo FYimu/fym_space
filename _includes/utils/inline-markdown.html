@@ -1,0 +1,10 @@
+{% assign rendered_value = include.value
+  | replace: ':tada:', '🎉'
+  | replace: ':sparkles:', '✨'
+  | replace: ':brazil:', '🇧🇷'
+  | replace: ':mortar_board:', '🎓'
+  | replace: ':books:', '📚'
+  | replace: ':scroll:', '📜'
+  | replace: ':trophy:', '🏆'
+%}
+{{ rendered_value | markdownify | remove: '<p>' | remove: '</p>' | strip }}

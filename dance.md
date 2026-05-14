@@ -15,7 +15,7 @@ active_nav: hobbies
 <p class="gallery-intro">A celebration of frames, feel, and footwork: documenting the expressive power of Latin and Ballroom dance.</p>
 
 <div class="gallery-grid">
-  {% for item in site.data.dance_gallery %}
+  {% for item in site.data.galleries.dance_gallery %}
   <figure class="gallery-item">
 
     <img src="{{ '/assets/gallery/' | append: item.image | relative_url }}" alt="{{ item.caption }}">
