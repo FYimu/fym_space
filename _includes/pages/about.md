@@ -14,7 +14,7 @@
       </p>
 
       <p>
-        Research keeps my head in the clouds; traveling and dancing keep my feet on the ground (and occasionally off it), see <a href="/#hobbies" class="about-nav"><strong>SIDE MISSIONS</strong></a>.
+        Research keeps my head in the clouds; traveling and dancing keep my feet on the ground (and occasionally off it), see <a href="{{ '/hobbies/' | relative_url }}" class="about-nav"><strong>SIDE MISSIONS</strong></a>.
       </p>
     </div>
 

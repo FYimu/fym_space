@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dance Gallery
-permalink: /dance/
+permalink: /hobbies/dance/
 active_nav: hobbies
 ---
 
@@ -10,7 +10,7 @@ active_nav: hobbies
   <h1 class="section-title">Dancing</h1>
 </div>
 
-<a href="{{ '/#hobbies' | relative_url }}" class="back-btn">← Back to Side Missions</a>
+<a href="{{ '/hobbies/' | relative_url }}" class="back-btn">← Back to Side Missions</a>
 
 <p class="gallery-intro">A celebration of frames, feel, and footwork: documenting the expressive power of Latin and Ballroom dance.</p>
 

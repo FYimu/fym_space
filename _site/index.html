@@ -4,17 +4,10 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FAN Jue</title>
-<script>
-  (function () {
-    var section = window.location.hash.slice(1) || 'about';
-    var validSections = ['about', 'education', 'publications', 'teaching', 'courses', 'hobbies'];
-    document.documentElement.dataset.initialSection = validSections.indexOf(section) === -1 ? 'about' : section;
-  }());
-</script>
  
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="is-home">
+<body>
   <div class="layout">
     <aside class="sidebar">
   <div class="sidebar-name">FAN Jue</div>
@@ -22,12 +15,12 @@
   <div class="sidebar-divider"></div>
 
   <nav id="nav">
-    <a href="/#about" data-section="about" class="">About</a>
-    <a href="/#education" data-section="education">Education</a>
-    <a href="/#publications" data-section="publications">Publications</a>
-    <a href="/#teaching" data-section="teaching">Teaching</a>
-    <a href="/#courses" data-section="courses">Courses</a> 
-    <a href="/#hobbies" data-section="hobbies" class="">Side Missions</a>
+    <a href="/about/" data-section="about" class="active">About</a>
+    <a href="/education/" data-section="education" class="">Education</a>
+    <a href="/publications/" data-section="publications" class="">Publications</a>
+    <a href="/teaching/" data-section="teaching" class="">Teaching</a>
+    <a href="/courses/" data-section="courses" class="">Courses</a> 
+    <a href="/hobbies/" data-section="hobbies" class="">Side Missions</a>
   </nav>
 
   <div class="sidebar-footer">
@@ -44,13 +37,12 @@
 </aside>
 
     <main class="main">
-      <section id="about" class="section active">
-  <div class="section-header">
+      <div class="section-header">
     <div class="section-eyebrow">Introduction</div>
     <h1 class="section-title">About Me</h1>
   </div>
 
-  <div class="about-grid">
+<div class="about-grid">
     <div class="about-text">
       <p>
         Hi, Fan Jue (范珏) here! I am a CS PhD student in School of Computing at National University of Singapore (NUS). I am very fortunate to be advised by Prof. <a href="https://www.comp.nus.edu.sg/cs/people/lowkh/" target="_blank" class="person-link">Bryan Kian Hsiang Low</a> and Dr. <a href="https://sites.google.com/site/nancyfchen/home" target="_blank" class="person-link">Nancy F. Chen</a>. My research primarily focuses on data-efficient AI and answering the question: <em>how much is the data worth?</em>
@@ -61,7 +53,7 @@
       </p>
 
       <p>
-        Research keeps my head in the clouds; traveling and dancing keep my feet on the ground (and occasionally off it), see <a href="/#hobbies" class="about-nav"><strong>SIDE MISSIONS</strong></a>.
+        Research keeps my head in the clouds; traveling and dancing keep my feet on the ground (and occasionally off it), see <a href="/hobbies/" class="about-nav"><strong>SIDE MISSIONS</strong></a>.
       </p>
     </div>
 
@@ -70,7 +62,7 @@
     </div>
   </div>
 
-  <div class="about-info">
+<div class="about-info">
         <span class="label">Position</span>
         <span class="value">PhD Student, 2025 Spring</span>
         <span class="label">Institution</span>
@@ -80,7 +72,6 @@
         <span class="label">Interests</span>
         <span class="value">Data-Efficient AI, Trustworthy AI</span>
       </div>
-
 
 <div class="updates-container">
   <div class="updates-header">Latest Updates</div>
@@ -94,7 +85,7 @@
 🎉 Our paper titled <em>Is Data Shapley Not Better than Random in Data Selection? Ask NASH</em> has been accepted as a ✨<strong>spotlight</strong>✨ paper at <strong>ICML 2026</strong>. See you in Seoul!
 
         
-          <a href="/#publications#nash" class="update-arrow-link js-update-link">→</a>
+          <a href="/publications/#nash" class="update-arrow-link js-update-link">→</a>
         
       </span>
     </li>
@@ -106,7 +97,7 @@
 🎉 Our paper titled <em>Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning</em> has been accepted as a ✨<strong>spotlight</strong>✨ paper at <strong>ICML 2026</strong>. See you in Seoul!
 
         
-          <a href="/#publications#dvf" class="update-arrow-link js-update-link">→</a>
+          <a href="/publications/#dvf" class="update-arrow-link js-update-link">→</a>
         
       </span>
     </li>
@@ -128,7 +119,7 @@
 🎉 Our paper titled <em>INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy!</em> has been accepted as a poster at <strong>ICLR 2026</strong>. See you in Rio!
 
         
-          <a href="/#publications#inosgd" class="update-arrow-link js-update-link">→</a>
+          <a href="/publications/#inosgd" class="update-arrow-link js-update-link">→</a>
         
       </span>
     </li>
@@ -212,325 +203,6 @@
   
 </div>
 
-</section>
-
-<section id="education" class="section">
-  
-  
-  <div class="section-header">
-    <div class="section-eyebrow">Background</div>
-    <h1 class="section-title">Education</h1>
-  </div>
-
-<div class="pub-note"> * denotes expected graduation year </div>
-
-<div class="edu-item">
-    <div class="edu-year">2025 – 2030*</div>
-    <div>
-      <div class="edu-degree">
-Doctor of Philosophy in Computer Science
-</div>
-      <div class="edu-institution">National University of Singapore – Singapore</div>
-      <div class="edu-desc">
-        
-          <div>
-Researching data–efficient AI and trustworthy AI
-</div>
-        
-
-        
-          <div>Advisors: 
-Prof. <a href="https://www.comp.nus.edu.sg/cs/people/lowkh/"><em>Bryan Kian Hsiang Low</em></a> &amp; Dr. <a href="https://sites.google.com/site/nancyfchen/home"><em>Nancy F. Chen</em></a>
-</div>
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-<div class="edu-item">
-    <div class="edu-year">2020 – 2024</div>
-    <div>
-      <div class="edu-degree">
-Bachelor of Science in Applied Mathematics <br />
-Bachelor of Computing in Computer Science
-</div>
-      <div class="edu-institution">National University of Singapore – Singapore</div>
-      <div class="edu-desc">
-        
-          <div>
-Graduated with Highest Distinctions for both degrees <br />
-Final Year Project supervised by Prof. <a href="https://www.comp.nus.edu.sg/cs/people/lowkh/"><em>Bryan Kian Hsiang Low</em></a> &amp; Prof. <a href="https://www.comp.nus.edu.sg/~scarlett/"><em>Jonathan Scarlett</em></a>
-</div>
-        
-
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-<div class="edu-item">
-    <div class="edu-year">2023 Fall</div>
-    <div>
-      <div class="edu-degree">
-Exchange
-</div>
-      <div class="edu-institution">École Polytechnique Fédérale de Lausanne – Lausanne, Switzerland</div>
-      <div class="edu-desc">
-        
-          <div>
-Exchange semester at EPFL, taking master courses in NLP and distributed algorithms.
-</div>
-        
-
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-
-</section>
-
-<section id="publications" class="section">
-  
-  
-<div class="section-header">
-    <div class="section-eyebrow">Research</div>
-    <h1 class="section-title">Publications</h1>
-  </div>
-
-<div class="pub-note"> † denotes equal contribution</div>
-
-<div class="pub-item" id="nash">
-  <div class="pub-title">
-Is Data Shapley Not Better than Random in Data Selection? Ask NASH
-</div>
-  <div class="pub-authors">
-Xiao Tian<sup>†</sup>, <strong>Jue Fan</strong><sup>†</sup>, Rachael Hwee Ling Sim, Wang Zixuan, Nancy F. Chen, Bryan Kian Hsiang Low
-</div>
-  <div class="pub-venue">
-ICML <strong>Spotlight</strong>✨ 2026 | Acceptance Rate: <strong>2.2%</strong>
-</div>
-  <div class="pub-links">
-    <a class="pub-tag" href="https://arxiv.org/pdf/2605.10684" target="_blank" rel="noopener noreferrer">PDF</a>
-  </div>
-</div>
-
-<div class="pub-item" id="dvf">
-  <div class="pub-title">
-Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning
-</div>
-  <div class="pub-authors">
-Rachael Hwee Ling Sim<sup>†</sup>, <strong>Jue Fan</strong><sup>†</sup>, Xiao Tian, Xinyi Xu, Patrick Jaillet, Bryan Kian Hsiang Low
-</div>
-  <div class="pub-venue">
-ICML <strong>Spotlight</strong>✨ 2026 | Acceptance Rate: <strong>2.2%</strong>
-</div>
-  <div class="pub-links">
-    <a class="pub-tag" href="https://arxiv.org/pdf/2605.11889" target="_blank" rel="noopener noreferrer">PDF</a>
-  </div>
-</div>
-
-<div class="pub-item" id="inosgd">
-  <div class="pub-title">
-INO-SGD: Addressing Utility Imbalance under Individualized Differential Privacy
-</div>
-  <div class="pub-authors">
-Xiao Tian, <strong>Jue Fan</strong>, Rachael Hwee Ling Sim, Bryan Kian Hsiang Low
-</div>
-  <div class="pub-venue">
-ICLR Poster 2026 | Acceptance Rate: <strong>28.18%</strong>
-</div>
-  <div class="pub-links">
-    <a class="pub-tag" href="https://openreview.net/pdf?id=HMapYMkcrl" target="_blank" rel="noopener noreferrer">PDF</a>
-  </div>
-</div>
-
-<div class="pub-item" id="dads">
-  <div class="pub-title">
-Deletion-Anticipative Data Selection with a Limited Budget
-</div>
-  <div class="pub-authors">
-Rachael Hwee Ling Sim, <strong>Jue Fan</strong>, Xiao Tian, Patrick Jaillet, Bryan Kian Hsiang Low
-</div>
-  <div class="pub-venue">
-ICML Poster 2024 | Acceptance Rate: <strong>27.50%</strong>
-</div>
-  <div class="pub-links">
-    <a class="pub-tag" href="https://openreview.net/pdf?id=ecvuJWE1YY" target="_blank" rel="noopener noreferrer">PDF</a>
-  </div>
-</div>
-
-<div class="pub-item" id="derdava">
-  <div class="pub-title">
-DeRDaVa: Deletion-Robust Data Valuation for Machine Learning
-</div>
-  <div class="pub-authors">
-Xiao Tian, Rachael Hwee Ling Sim, <strong>Jue Fan</strong>, Bryan Kian Hsiang Low
-</div>
-  <div class="pub-venue">
-AAAI Poster 2024 | Acceptance Rate: <strong>23.75%</strong>
-</div>
-  <div class="pub-links">
-    <a class="pub-tag" href="https://arxiv.org/pdf/2312.11413" target="_blank" rel="noopener noreferrer">PDF</a>
-  </div>
-</div>
-
-
-</section>
-
-<section id="hobbies" class="section">
-  
-  <div class="section-header">
-  <div class="section-eyebrow">Beyond Research</div>
-  <h1 class="section-title">Side Missions</h1>
-</div>
-
-<div class="hobbies-grid">
-  <a href="/travel/" class="hobby-card-link">
-    <div class="hobby-card">
-      <div class="hobby-icon">◎</div>
-      <div class="hobby-name">Travelling</div>
-      <div class="hobby-desc">Seeking out the hidden patterns in both city streets and open fields.</div>
-    </div>
-  </a>
-
-  <a href="/dance/" class="hobby-card-link">
-    <div class="hobby-card">
-      <div class="hobby-icon">◎</div>
-      <div class="hobby-name">Dancing</div>
-      <div class="hobby-desc">Exploring the rhythm of connection through moments captured in the frame.</div>
-    </div>
-  </a>
-</div>
-
-</section>
-
-<section id="courses" class="section">
-  
-  <div class="section-header">
-    <div class="section-eyebrow">Academic Journey</div>
-    <h1 class="section-title">Courses</h1>
-  </div>
-
-<div id="courses-list">
-    <h3 class="course-subhead">Graduate</h3>
-    <div class="courses-grid">
-      
-      
-      
-      <div class="course-card" data-course="cs6207">
-        <div class="dot"></div>
-        <div class="course-code">CS6207</div>
-        <div class="course-name">Advanced Natural Language Processing</div>
-        <div class="course-term">AY25/26 Sem 2 | Prof. Ng Hwee Tou</div>
-        <span class="course-arrow">→</span>
-      </div>
-      
-      <div class="course-card" data-course="cs6208">
-        <div class="dot"></div>
-        <div class="course-code">CS6208</div>
-        <div class="course-name">Advanced Topics in Artificial Intelligence</div>
-        <div class="course-term">AY25/26 Sem 1 | Prof. Ling Chun Kai</div>
-        <span class="course-arrow">→</span>
-      </div>
-      
-      <div class="course-card" data-course="cs5461">
-        <div class="dot"></div>
-        <div class="course-code">CS5461</div>
-        <div class="course-name">Algorithmic Mechanism Design</div>
-        <div class="course-term">AY25/26 Sem 1 | Prof. Warut Suksompong</div>
-        <span class="course-arrow">→</span>
-      </div>
-      
-    </div>
-
-    <h3 class="course-subhead">Undergraduate</h3>
-    <div class="courses-grid">
-      
-      
-      <div class="course-card" data-course="cs5234">
-        <div class="dot"></div>
-        <div class="course-code">CS5234</div>
-        <div class="course-name">Algorithms at Scale</div>
-        <div class="course-term">AY24/25 Sem 1 | Prof. Diptarka Chakraborty</div>
-        <span class="course-arrow">→</span>
-      </div>
-      
-    </div>
-  </div>
-
-<div id="course-review-panel" class="course-review-panel">
-    <div class="back-btn" id="back-btn">← Back to Courses</div>
-    <div class="review-header">
-      <div class="course-code" id="rv-code"></div>
-      <div class="review-title" id="rv-name"></div>
-      <div class="review-meta" id="rv-meta"></div>
-      <div class="review-grade" id="rv-grade"></div>
-    </div>
-    <div class="review-rating">
-      <div class="rating-item"><span class="rating-label">Difficulty</span><span class="rating-value" id="rv-diff"></span></div>
-      <div class="rating-item"><span class="rating-label">Enjoyment</span><span class="rating-value" id="rv-enjoy"></span></div>
-      <div class="rating-item"><span class="rating-label">Usefulness</span><span class="rating-value" id="rv-useful"></span></div>
-    </div>
-    <div class="review-section"><h3>Overview</h3><p id="rv-overview"></p></div>
-    <div class="review-section"><h3>Assessment</h3><p id="rv-assessment"></p></div>
-  </div>
-
-</section>
-
-<section id="teaching" class="section">
-  
-  <div class="section-header">
-  <div class="section-eyebrow">Pedagogy</div>
-  <h1 class="section-title">Teaching</h1>
-</div>
-
-<div class="teaching-item">
-  <div class="teaching-code">CS2030</div>
-  
-  <div>
-    <div class="teaching-title">Programming Methodology</div>
-    <div class="teaching-role">Undergraduate Teaching Assistant – NUS</div>
-    <div class="teaching-desc"><p>Conducted weekly lab sessions to facilitate students’ learning and implementation of concepts in lab assignments and projects.</p>
-</div>
-    
-    <ul class="teaching-semesters">
-      
-        <li>AY22/23 Sem 2</li>
-      
-        <li>AY21/22 Sem 2</li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="teaching-item">
-  <div class="teaching-code">CS3244</div>
-  
-  <div>
-    <div class="teaching-title">Machine Learning</div>
-    <div class="teaching-role">Undergraduate Teaching Assistant – NUS</div>
-    <div class="teaching-desc"><p>Responsible for conducting weekly tutorials, designing exam questions, project mentoring and grading.</p>
-</div>
-    
-    <ul class="teaching-semesters">
-      
-        <li>AY22/23 Sem 2</li>
-      
-        <li>AY22/23 Sem 1</li>
-      
-    </ul>
-  </div>
-</div>
-
-
-</section>
 
     </main>
   </div>
@@ -538,102 +210,37 @@ AAAI Poster 2024 | Acceptance Rate: <strong>23.75%</strong>
 
   <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('.section');
-  const navLinks = document.querySelectorAll('nav a');
+  function highlightTarget(target) {
+    if (!target) return;
 
-  function showSection(id) {
-    if (!id) return;
-    const targetSection = document.getElementById(id);
-    if (!targetSection) return;
+    document.querySelectorAll('.pub-highlight').forEach(el => el.classList.remove('pub-highlight'));
 
-    delete document.documentElement.dataset.initialSection;
-    sections.forEach(s => s.classList.remove('active'));
-    navLinks.forEach(a => a.classList.remove('active'));
-    
-    targetSection.classList.add('active');
-    const link = document.querySelector(`nav a[data-section="${id}"]`);
-    if (link) link.classList.add('active');
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.classList.add('pub-highlight');
+      target.addEventListener('animationend', () => {
+        target.classList.remove('pub-highlight');
+      }, { once: true });
+    }, 100);
   }
 
-  // 1. Sidebar Navigation
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const sectionId = link.getAttribute('data-section');
-      if (document.getElementById(sectionId)) {
-        e.preventDefault();
-        showSection(sectionId);
-        history.pushState(null, null, '#' + sectionId);
-      }
-    });
-  });
-
-  // 2. Update Arrow Logic (With Self-Cleaning Highlight)
   document.addEventListener('click', (e) => {
     const arrow = e.target.closest('.js-update-link');
     if (!arrow) return;
 
-    const href = arrow.getAttribute('href');
-    if (!href.includes('#')) return;
-
-    const parts = href.split('#'); 
-    const sectionId = parts[1]; 
-    const paperId = parts[2];   
-
-    const targetSection = document.getElementById(sectionId);
-    if (targetSection) {
+    const url = new URL(arrow.href, window.location.href);
+    const target = url.hash ? document.getElementById(url.hash.slice(1)) : null;
+    if (url.pathname === window.location.pathname && target) {
       e.preventDefault();
-      showSection(sectionId);
-      history.pushState(null, null, '#' + (paperId || sectionId));
-
-      if (paperId) {
-        const paperElement = document.getElementById(paperId);
-        if (paperElement) {
-          // WIPE: Remove highlight from any other items immediately
-          document.querySelectorAll('.pub-highlight').forEach(el => el.classList.remove('pub-highlight'));
-
-          setTimeout(() => {
-            paperElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // ADD HIGHLIGHT
-            paperElement.classList.add('pub-highlight');
-
-            // SELF-CLEAN: Remove the class as soon as the animation finishes
-            paperElement.addEventListener('animationend', () => {
-              paperElement.classList.remove('pub-highlight');
-            }, { once: true }); // { once: true } ensures the listener cleans itself up too
-          }, 100);
-        }
-      }
+      history.pushState(null, null, url.hash);
+      highlightTarget(target);
     }
   });
 
-  // 3. Handle Page Load
-  const hash = window.location.hash.substring(1);
-  if (hash) {
-    const targetItem = document.getElementById(hash);
-    if (targetItem) {
-      if (targetItem.classList.contains('section')) {
-        showSection(hash);
-        return;
-      }
-
-      const parentSection = targetItem.closest('.section');
-      if (parentSection) {
-        showSection(parentSection.id);
-        setTimeout(() => {
-          targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          targetItem.classList.add('pub-highlight');
-          targetItem.addEventListener('animationend', () => {
-            targetItem.classList.remove('pub-highlight');
-          }, { once: true });
-        }, 600);
-      }
-    }
-  } else {
-    showSection('about');
+  if (window.location.hash) {
+    highlightTarget(document.getElementById(window.location.hash.slice(1)));
   }
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('toggle-updates-btn');
@@ -642,13 +249,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (toggleBtn && updatesList) {
     toggleBtn.addEventListener('click', () => {
       const isExpanded = updatesList.classList.toggle('is-expanded');
-      
-      // Update button text
       toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
-      
-      // Optional: If collapsing, scroll back up to the updates header
+
       if (!isExpanded) {
-        document.querySelector('.updates-header').scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('.updates-header')?.scrollIntoView({ behavior: 'smooth' });
       }
     });
   }

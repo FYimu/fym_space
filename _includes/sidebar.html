@@ -4,12 +4,12 @@
   <div class="sidebar-divider"></div>
 
   <nav id="nav">
-    <a href="{{ '/#about' | relative_url }}" data-section="about" class="{% if page.active_nav == 'about' %}active{% endif %}">About</a>
-    <a href="{{ '/#education' | relative_url }}" data-section="education">Education</a>
-    <a href="{{ '/#publications' | relative_url }}" data-section="publications">Publications</a>
-    <a href="{{ '/#teaching' | relative_url }}" data-section="teaching">Teaching</a>
-    <a href="{{ '/#courses' | relative_url }}" data-section="courses">Courses</a> 
-    <a href="{{ '/#hobbies' | relative_url }}" data-section="hobbies" class="{% if page.active_nav == 'hobbies' %}active{% endif %}">Side Missions</a>
+    <a href="{{ '/about/' | relative_url }}" data-section="about" class="{% if page.active_nav == 'about' %}active{% endif %}">About</a>
+    <a href="{{ '/education/' | relative_url }}" data-section="education" class="{% if page.active_nav == 'education' %}active{% endif %}">Education</a>
+    <a href="{{ '/publications/' | relative_url }}" data-section="publications" class="{% if page.active_nav == 'publications' %}active{% endif %}">Publications</a>
+    <a href="{{ '/teaching/' | relative_url }}" data-section="teaching" class="{% if page.active_nav == 'teaching' %}active{% endif %}">Teaching</a>
+    <a href="{{ '/courses/' | relative_url }}" data-section="courses" class="{% if page.active_nav == 'courses' %}active{% endif %}">Courses</a> 
+    <a href="{{ '/hobbies/' | relative_url }}" data-section="hobbies" class="{% if page.active_nav == 'hobbies' %}active{% endif %}">Side Missions</a>
   </nav>
 
   <div class="sidebar-footer">

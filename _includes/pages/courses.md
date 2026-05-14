@@ -47,6 +47,6 @@
       <div class="rating-item"><span class="rating-label">Enjoyment</span><span class="rating-value" id="rv-enjoy"></span></div>
       <div class="rating-item"><span class="rating-label">Usefulness</span><span class="rating-value" id="rv-useful"></span></div>
     </div>
-    <div class="review-section"><h3>Overview</h3><p id="rv-overview"></p></div>
     <div class="review-section"><h3>Assessment</h3><p id="rv-assessment"></p></div>
+    <div class="review-section"><h3>Review</h3><p id="rv-overview"></p></div>
   </div>

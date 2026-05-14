@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Travel Gallery
-permalink: /travel/
+permalink: /hobbies/travel/
 active_nav: hobbies
 ---
 
@@ -10,7 +10,7 @@ active_nav: hobbies
   <h1 class="section-title">Travelling</h1>
 </div>
 
-<a href="{{ '/#hobbies' | relative_url }}" class="back-btn">← Back to Side Missions</a>
+<a href="{{ '/hobbies/' | relative_url }}" class="back-btn">← Back to Side Missions</a>
 
 <p class="gallery-intro">A visual journal of structural and natural design, capturing the geometry of the places I’ve wandered.</p>
 

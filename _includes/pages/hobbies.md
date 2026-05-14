@@ -4,7 +4,7 @@
 </div>
 
 <div class="hobbies-grid">
-  <a href="/travel/" class="hobby-card-link">
+  <a href="{{ '/hobbies/travel/' | relative_url }}" class="hobby-card-link">
     <div class="hobby-card">
       <div class="hobby-icon">◎</div>
       <div class="hobby-name">Travelling</div>
@@ -12,7 +12,7 @@
     </div>
   </a>
 
-  <a href="/dance/" class="hobby-card-link">
+  <a href="{{ '/hobbies/dance/' | relative_url }}" class="hobby-card-link">
     <div class="hobby-card">
       <div class="hobby-icon">◎</div>
       <div class="hobby-name">Dancing</div>

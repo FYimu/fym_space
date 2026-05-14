@@ -11,6 +11,7 @@ The repository has been restructured for better modularity and maintainability, 
 - **_updates/**, **_courses/**, **_education/**, **_teaching/**, **_publications/** - Markdown collections for prose-heavy content
 - **_includes/** - Reusable template components (pages, scripts)
 - **_layouts/** - Page layout templates
+- **about.md**, **education.md**, **publications.md**, **teaching.md**, **courses.md**, **hobbies.md** - Top-level sidebar pages
 - **assets/gallery/** - Image assets
 
 ## Directory Structure
@@ -20,8 +21,14 @@ The repository has been restructured for better modularity and maintainability, 
 - **Gemfile** - Ruby dependencies
 - **.gitignore** - Git exclusion rules
 - **index.md** - Homepage
-- **dance.md** - Dance gallery page
-- **travel.md** - Travel gallery page
+- **about.md** - About page
+- **education.md** - Education page
+- **publications.md** - Publications page
+- **teaching.md** - Teaching page
+- **courses.md** - Courses page
+- **hobbies.md** - Side Missions page
+- **dance.md** - Dance gallery page at `/hobbies/dance/`
+- **travel.md** - Travel gallery page at `/hobbies/travel/`
 - **todo.md** - Personal to-do list
 
 ### `/_sass/` - Stylesheets
@@ -86,7 +93,7 @@ Content that contains Markdown now lives in collection documents:
 - **sidebar.html** - Navigation sidebar component
 
 #### `/pages/`
-Page content templates (included in sections):
+Page content templates (included by top-level pages):
 - **about.md** - About section with profile info
 - **education.md** - Education timeline
 - **publications.md** - Publications list
@@ -170,11 +177,12 @@ In templates, data is accessed using nested paths:
 2. Use consistent YAML structure
 3. Update data access references in templates
 
-### Adding a new page section:
+### Adding a new top-level page:
 1. Create `_includes/pages/section.md`
-2. Add data file if needed
-3. Add section-specific styles to `_sass/components/`
-4. Include in main layout via Liquid conditionals
+2. Create a root page such as `section.md` with `layout: default`, a `permalink`, and `active_nav`
+3. Include the reusable content template with `{% include pages/section.md %}`
+4. Add a sidebar link in `_includes/sidebar.html`
+5. Add section-specific styles to `_sass/components/` if needed
 
 ## Build & Deployment
 
