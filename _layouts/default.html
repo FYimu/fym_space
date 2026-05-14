@@ -4,7 +4,7 @@
   {% include head.html %} 
   <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
 </head>
-<body>
+<body class="{% if page.url == '/' %}is-home{% endif %}">
   <div class="layout">
     {% include sidebar.html %}
     <main class="main">

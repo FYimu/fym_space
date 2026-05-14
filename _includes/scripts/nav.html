@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetSection = document.getElementById(id);
     if (!targetSection) return;
 
+    delete document.documentElement.dataset.initialSection;
     sections.forEach(s => s.classList.remove('active'));
     navLinks.forEach(a => a.classList.remove('active'));
     
@@ -73,6 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hash) {
     const targetItem = document.getElementById(hash);
     if (targetItem) {
+      if (targetItem.classList.contains('section')) {
+        showSection(hash);
+        return;
+      }
+
       const parentSection = targetItem.closest('.section');
       if (parentSection) {
         showSection(parentSection.id);

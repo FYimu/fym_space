@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FAN Jue</title> 
+<title>FAN Jue</title>
+<script>
+  (function () {
+    var section = window.location.hash.slice(1) || 'about';
+    var validSections = ['about', 'education', 'publications', 'teaching', 'courses', 'hobbies'];
+    document.documentElement.dataset.initialSection = validSections.indexOf(section) === -1 ? 'about' : section;
+  }());
+</script>
+ 
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body class="is-home">
   <div class="layout">
     <aside class="sidebar">
   <div class="sidebar-name">FAN Jue</div>
@@ -14,7 +22,7 @@
   <div class="sidebar-divider"></div>
 
   <nav id="nav">
-    <a href="/#about" data-section="about" class="active">About</a>
+    <a href="/#about" data-section="about" class="">About</a>
     <a href="/#education" data-section="education">Education</a>
     <a href="/#publications" data-section="publications">Publications</a>
     <a href="/#teaching" data-section="teaching">Teaching</a>
@@ -34,6 +42,7 @@
     <div>© 2026 FAN JUE</div>
   </div>
 </aside>
+
     <main class="main">
       <section id="about" class="section active">
   <div class="section-header">
@@ -537,6 +546,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const targetSection = document.getElementById(id);
     if (!targetSection) return;
 
+    delete document.documentElement.dataset.initialSection;
     sections.forEach(s => s.classList.remove('active'));
     navLinks.forEach(a => a.classList.remove('active'));
     
@@ -602,6 +612,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (hash) {
     const targetItem = document.getElementById(hash);
     if (targetItem) {
+      if (targetItem.classList.contains('section')) {
+        showSection(hash);
+        return;
+      }
+
       const parentSection = targetItem.closest('.section');
       if (parentSection) {
         showSection(parentSection.id);
@@ -640,6 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
   
     <script>
   const courseData = {
@@ -653,7 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
       diff: "2/5",
       enjoy: "3/5",
       useful: "5/5",
-      overview: "<p>This module provides a comprehensive introduction to modern NLP techniques.</p>\n",
+      overview: "<p>This module provides a comprehensive introduction to modern NLP techniques. TBC</p>\n",
       assessment: "<ul>\n  <li>Assignments (40%)</li>\n  <li>Final Project (40%)</li>\n  <li>Participation (20%)</li>\n</ul>\n"
     },
     

@@ -4,7 +4,7 @@
   <div class="sidebar-divider"></div>
 
   <nav id="nav">
-    <a href="{{ '/#about' | relative_url }}" data-section="about" class="{% if page.active_nav == 'about' or page.url == '/' %}active{% endif %}">About</a>
+    <a href="{{ '/#about' | relative_url }}" data-section="about" class="{% if page.active_nav == 'about' %}active{% endif %}">About</a>
     <a href="{{ '/#education' | relative_url }}" data-section="education">Education</a>
     <a href="{{ '/#publications' | relative_url }}" data-section="publications">Publications</a>
     <a href="{{ '/#teaching' | relative_url }}" data-section="teaching">Teaching</a>

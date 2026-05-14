@@ -135,3 +135,11 @@
     margin-bottom: 0.75rem;
 }
 .review-section p { color: var(--ink-soft); line-height: 1.75; font-size: 15px; }
+.review-section ul {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.75;
+    margin: 0.25rem 0 0;
+    padding-left: 1.35rem;
+}
+.review-section li { padding-left: 0.15rem; }

@@ -106,12 +106,24 @@ nav {
   border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s; }
 
-#nav a:hover, #nav a.active {
+#nav a:hover, #nav a.active,
+html[data-initial-section="about"] body.is-home #nav a[data-section="about"],
+html[data-initial-section="education"] body.is-home #nav a[data-section="education"],
+html[data-initial-section="publications"] body.is-home #nav a[data-section="publications"],
+html[data-initial-section="teaching"] body.is-home #nav a[data-section="teaching"],
+html[data-initial-section="courses"] body.is-home #nav a[data-section="courses"],
+html[data-initial-section="hobbies"] body.is-home #nav a[data-section="hobbies"] {
   color: var(--ink);
   border-bottom-color: var(--sage);
   text-decoration: none; }
 
-#nav a.active {
+#nav a.active,
+html[data-initial-section="about"] body.is-home #nav a[data-section="about"],
+html[data-initial-section="education"] body.is-home #nav a[data-section="education"],
+html[data-initial-section="publications"] body.is-home #nav a[data-section="publications"],
+html[data-initial-section="teaching"] body.is-home #nav a[data-section="teaching"],
+html[data-initial-section="courses"] body.is-home #nav a[data-section="courses"],
+html[data-initial-section="hobbies"] body.is-home #nav a[data-section="hobbies"] {
   color: var(--sage);
   font-weight: 500; }
 
@@ -206,6 +218,17 @@ nav {
   animation: fadeIn 0.35s ease; }
 
 .section.active {
+  display: block; }
+
+html[data-initial-section] body.is-home .section.active {
+  display: none; }
+
+html[data-initial-section="about"] body.is-home #about,
+html[data-initial-section="education"] body.is-home #education,
+html[data-initial-section="publications"] body.is-home #publications,
+html[data-initial-section="teaching"] body.is-home #teaching,
+html[data-initial-section="courses"] body.is-home #courses,
+html[data-initial-section="hobbies"] body.is-home #hobbies {
   display: block; }
 
 @keyframes fadeIn {
@@ -516,6 +539,16 @@ nav {
   color: var(--ink-soft);
   line-height: 1.75;
   font-size: 15px; }
+
+.review-section ul {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 0.25rem 0 0;
+  padding-left: 1.35rem; }
+
+.review-section li {
+  padding-left: 0.15rem; }
 
 .teaching-item {
   display: grid;

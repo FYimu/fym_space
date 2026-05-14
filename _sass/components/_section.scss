@@ -7,6 +7,16 @@
 }
 .section.active { display: block; }
 
+html[data-initial-section] body.is-home .section.active { display: none; }
+html[data-initial-section="about"] body.is-home #about,
+html[data-initial-section="education"] body.is-home #education,
+html[data-initial-section="publications"] body.is-home #publications,
+html[data-initial-section="teaching"] body.is-home #teaching,
+html[data-initial-section="courses"] body.is-home #courses,
+html[data-initial-section="hobbies"] body.is-home #hobbies {
+    display: block;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }

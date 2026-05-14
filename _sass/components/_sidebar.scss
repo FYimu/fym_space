@@ -48,12 +48,27 @@
       border-bottom: 1px solid transparent;
       transition: color 0.2s, border-color 0.2s;
     }
-    #nav a:hover, #nav a.active {
+    #nav a:hover, #nav a.active,
+    html[data-initial-section="about"] body.is-home #nav a[data-section="about"],
+    html[data-initial-section="education"] body.is-home #nav a[data-section="education"],
+    html[data-initial-section="publications"] body.is-home #nav a[data-section="publications"],
+    html[data-initial-section="teaching"] body.is-home #nav a[data-section="teaching"],
+    html[data-initial-section="courses"] body.is-home #nav a[data-section="courses"],
+    html[data-initial-section="hobbies"] body.is-home #nav a[data-section="hobbies"] {
       color: var(--ink);
       border-bottom-color: var(--sage);
       text-decoration: none;
     }
-    #nav a.active { color: var(--sage); font-weight: 500; }
+    #nav a.active,
+    html[data-initial-section="about"] body.is-home #nav a[data-section="about"],
+    html[data-initial-section="education"] body.is-home #nav a[data-section="education"],
+    html[data-initial-section="publications"] body.is-home #nav a[data-section="publications"],
+    html[data-initial-section="teaching"] body.is-home #nav a[data-section="teaching"],
+    html[data-initial-section="courses"] body.is-home #nav a[data-section="courses"],
+    html[data-initial-section="hobbies"] body.is-home #nav a[data-section="hobbies"] {
+      color: var(--sage);
+      font-weight: 500;
+    }
     .sidebar-footer {
       margin-top: auto;
       font-size: 13px;
