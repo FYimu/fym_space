@@ -15,4 +15,5 @@
 
 #### Debug
 - [ ] link to side missions not working @ About Me
+- [ ] direct to pub-item using ->, go back to about, go to pubs triggers highlight effect
 

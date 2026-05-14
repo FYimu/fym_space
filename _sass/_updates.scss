@@ -64,7 +64,7 @@
   position: relative;
   top: -2px;
   transition: transform 0.2s ease, color 0.2s ease;
-  color: var(--warm-gray) !important;
+  color: var(--warm-gray);
 }
 
 .update-arrow {
@@ -74,11 +74,11 @@
 
 
 .update-arrow-link:hover {
-  color: var(--rose) !important;
+  color: var(--rose);
   transform: translateX(3px);
 }
 
 .update-arrow-link:visited {
-  color: var(--warm-gray) !important; /* Force your specific blue */
+  color: var(--warm-gray);
   text-decoration: none;
 }

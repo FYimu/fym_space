@@ -218,13 +218,13 @@ nav { flex: 1; }
 
 .update-text strong { font-weight: 700; }
 
-.update-arrow-link { display: inline-flex; align-items: center; text-decoration: none; margin-left: 8px; vertical-align: middle; position: relative; top: -2px; transition: transform 0.2s ease, color 0.2s ease; color: var(--warm-gray) !important; }
+.update-arrow-link { display: inline-flex; align-items: center; text-decoration: none; margin-left: 8px; vertical-align: middle; position: relative; top: -2px; transition: transform 0.2s ease, color 0.2s ease; color: var(--warm-gray); }
 
 .update-arrow { width: 14px; height: 14px; }
 
-.update-arrow-link:hover { color: var(--rose) !important; transform: translateX(3px); }
+.update-arrow-link:hover { color: var(--rose); transform: translateX(3px); }
 
-.update-arrow-link:visited { color: var(--warm-gray) !important; /* Force your specific blue */ text-decoration: none; }
+.update-arrow-link:visited { color: var(--warm-gray); text-decoration: none; }
 
 .section { display: none; width: 100%; max-width: 900px; margin: 0; animation: fadeIn 0.35s ease; }
 
