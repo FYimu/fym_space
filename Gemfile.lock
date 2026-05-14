@@ -261,7 +261,6 @@ PLATFORMS
 DEPENDENCIES
   ffi (= 1.16.3)
   github-pages
-  jemoji
 
 BUNDLED WITH
    1.17.2

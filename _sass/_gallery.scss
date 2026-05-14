@@ -1,30 +1,25 @@
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Creates flexible columns */
+  gap: 30px; /* Space between photos */
+  align-items: start;
+}
+
 .gallery-item {
-  position: relative; /* Needed to anchor the label */
-  margin-bottom: 20px;
+  margin: 0; /* Resets default browser margins on <figure> tags */
+  display: flex;
+  flex-direction: column;
 }
 
-.gallery-label {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 4px 10px;
-  font-size: 0.7rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-  z-index: 5;
-  color: var(--cream);
-  pointer-events: none; /* Clicking the label clicks the image */
-}
 
-/* Specific Colors for your Missions */
-.label-travel {
-  background-color: var(--blue-gray); /* A muted Morandi Blue-Grey */
-}
-
-.label-dance {
-  background-color: var(--rose); /* Your Morandi Rose/Red */
+.gallery-item img {
+  width: 100%;         
+  max-width: 100%;     
+  height: auto;        
+  aspect-ratio: 3 / 4; /* Forces uniform rectangles */
+  object-fit: cover;   /* Crops beautifully without stretching */
+  display: block;      
+  border-radius: 4px;  
 }
 
 .gallery-caption {
