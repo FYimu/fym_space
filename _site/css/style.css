@@ -198,6 +198,16 @@ nav {
 .about-nav:visited {
   color: var(--ink-soft) !important; }
 
+.about-nav {
+  color: var(--sage);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px; }
+
+.about-nav:hover {
+  color: var(--ink); }
+
 .section {
   display: none;
   width: 100%;
