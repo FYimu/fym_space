@@ -33,3 +33,20 @@
     color: var(--ink);
     line-height: 1.1;
 }
+
+@media (max-width: 820px) {
+  .section-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+}

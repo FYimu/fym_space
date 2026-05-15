@@ -54,3 +54,26 @@
 .about-nav:hover {
     color: var(--ink);
 }
+
+@media (max-width: 700px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-photo {
+    width: min(220px, 70vw);
+    height: auto;
+    aspect-ratio: 5 / 6;
+    order: -1;
+  }
+
+  .about-info {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .about-info .label {
+    padding-top: 0;
+  }
+}

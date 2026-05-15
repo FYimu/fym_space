@@ -61,3 +61,20 @@
     border-radius: 2px;
     color: var(--ink-soft);
 }
+
+@media (max-width: 640px) {
+  .teaching-item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .teaching-code {
+    padding-top: 0;
+  }
+
+  .teaching-title {
+    font-size: 1.15rem;
+  }
+}

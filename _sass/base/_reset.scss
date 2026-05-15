@@ -3,6 +3,12 @@ html {
   scroll-behavior: smooth; 
   scrollbar-gutter: stable;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
     font-family: "Palatino", "Palatino Linotype", "Book Antiqua", serif;
     background: var(--cream);

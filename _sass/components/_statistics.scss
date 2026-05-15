@@ -20,9 +20,26 @@
 }
 
 @media (max-width: 700px) {
+  .stats-wrap {
+    max-width: none;
+  }
+
   .stats-map {
-    height: 420px;
+    height: 340px;
     min-height: 0;
+    margin: 0.5rem 0 1.25rem;
+  }
+
+  .stats-note {
+    margin: 0.75rem auto;
+    font-size: 0.92rem;
+    line-height: 1.65;
+    text-align: left;
+  }
+
+  .stats-total {
+    width: 100%;
+    font-size: 14px;
   }
 }
 

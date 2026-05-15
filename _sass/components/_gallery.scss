@@ -70,3 +70,19 @@
   border: 1px solid var(--border-med);
   background: var(--linen);
 }
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .gallery-lightbox {
+    padding: 1rem;
+  }
+
+  .gallery-lightbox img {
+    max-width: 94vw;
+    max-height: 82vh;
+  }
+}

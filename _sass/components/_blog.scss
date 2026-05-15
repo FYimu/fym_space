@@ -163,9 +163,19 @@
 }
 
 @media (max-width: 760px) {
+  .blog-list {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-lede {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
   .photo-story-item {
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 1.25rem 0;
   }
 
   .photo-media,
@@ -174,5 +184,17 @@
   .photo-story-item:nth-child(even) .photo-writeup {
     grid-column: 1;
     grid-row: auto;
+  }
+
+  .photo-collage {
+    gap: 0.4rem;
+  }
+
+  .photo-writeup {
+    padding: 0;
+  }
+
+  .photo-meta {
+    flex-wrap: wrap;
   }
 }

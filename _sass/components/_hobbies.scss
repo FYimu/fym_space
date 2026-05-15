@@ -63,3 +63,23 @@
 .gallery-img:hover {
   transform: scale(1.02); /* Slight zoom effect when hovering over a photo */
 }
+
+@media (max-width: 640px) {
+  .hobbies-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-card {
+    padding: 1.35rem;
+  }
+
+  .gallery-intro {
+    margin-bottom: 2rem;
+  }
+
+  .gallery-img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+}

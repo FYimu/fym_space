@@ -28,3 +28,17 @@
     margin-bottom: 0.7rem;
 }
 .edu-desc { font-size: 15px; color: var(--ink-soft); line-height: 1.65; }
+
+@media (max-width: 640px) {
+  .edu-item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .edu-year {
+    padding-top: 0;
+    font-size: 0.95rem;
+  }
+}
