@@ -35,7 +35,7 @@ active_nav: statistics
   };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/jsvectormap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/maps/world.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.7.0/dist/maps/world-merc.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const target = document.querySelector('#stats-country-map');
@@ -85,7 +85,7 @@ active_nav: statistics
 
       new jsVectorMap({
         selector: '#stats-country-map',
-        map: 'world',
+        map: 'world_merc',
         backgroundColor: 'transparent',
         zoomButtons: false,
         zoomOnScroll: false,
