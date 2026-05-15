@@ -50,6 +50,14 @@
   display: none;
 }
 
+.stats-map .jvm-marker {
+  transition: r 0.2s, fill 0.2s, stroke 0.2s;
+}
+
+.stats-map .jvm-marker:hover {
+  r: 9;
+}
+
 .jvm-tooltip {
   border: 1px solid var(--rose) !important;
   border-radius: 2px !important;

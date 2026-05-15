@@ -56,6 +56,29 @@ active_nav: statistics
     const linen = styles.getPropertyValue('--linen').trim();
     const ink = styles.getPropertyValue('--ink').trim();
     const countryVisits = window.websiteStats.countries || {};
+    const tinyCountries = {
+      SG: { name: 'Singapore', coords: [1.3521, 103.8198] },
+      HK: { name: 'Hong Kong', coords: [22.3193, 114.1694] },
+      MO: { name: 'Macau', coords: [22.1987, 113.5439] },
+      BH: { name: 'Bahrain', coords: [26.0667, 50.5577] },
+      MT: { name: 'Malta', coords: [35.9375, 14.3754] },
+      LU: { name: 'Luxembourg', coords: [49.8153, 6.1296] },
+      AD: { name: 'Andorra', coords: [42.5063, 1.5218] },
+      LI: { name: 'Liechtenstein', coords: [47.166, 9.5554] },
+      MC: { name: 'Monaco', coords: [43.7384, 7.4246] },
+      SM: { name: 'San Marino', coords: [43.9424, 12.4578] },
+      VA: { name: 'Vatican City', coords: [41.9029, 12.4534] },
+      MV: { name: 'Maldives', coords: [3.2028, 73.2207] },
+      BN: { name: 'Brunei', coords: [4.5353, 114.7277] },
+      QA: { name: 'Qatar', coords: [25.3548, 51.1839] }
+    };
+    const tinyCountryMarkers = Object.entries(tinyCountries)
+      .filter(([code]) => Number(countryVisits[code] || 0) > 0)
+      .map(([code, country]) => ({
+        ...country,
+        code,
+        visits: Number(countryVisits[code] || 0)
+      }));
 
     try {
       target.innerHTML = '';
@@ -86,10 +109,31 @@ active_nav: statistics
             normalizeFunction: 'polynomial'
           }]
         },
+        markers: tinyCountryMarkers,
+        markerStyle: {
+          initial: {
+            r: 7,
+            fill: rose,
+            fillOpacity: 0.92,
+            stroke: linen,
+            strokeWidth: 2.4
+          },
+          hover: {
+            fill: rose,
+            stroke: ink,
+            cursor: 'default'
+          }
+        },
         onRegionTooltipShow(event, tooltip, code) {
           const visits = countryVisits[code] || 0;
           tooltip.css({ color: ink, backgroundColor: linen, borderColor: rose });
           tooltip.text(`${tooltip.text()} · ${visits} visits`);
+        },
+        onMarkerTooltipShow(event, tooltip, index) {
+          const marker = tinyCountryMarkers[index];
+          if (!marker) return;
+          tooltip.css({ color: ink, backgroundColor: linen, borderColor: rose });
+          tooltip.text(`${marker.name} · ${marker.visits} visits`);
         }
       });
     } catch (error) {
