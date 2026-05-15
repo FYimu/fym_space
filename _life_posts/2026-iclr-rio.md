@@ -6,7 +6,7 @@ summary: "Featuring my first ever conference experience."
 cover: "/assets/gallery/rio2026/riocentro.jpg"
 photos:
   - image: "/assets/gallery/rio2026/tapioca.jpg"
-    location: "Riocentro"
+    location: "Trem Bão Deli"
     date: "2026.04.22 (UTC-3)"
     text: |
       First meal in Brazil: _tapioca tradicional_ and _café carioca_. I came prepared for something exotic, but the tapioca pancake surprised me with a texture and taste somewhat like chewy paper, while the coffee was rather sour. Still worth trying for the experience.
