@@ -23,7 +23,7 @@ jobs:
 
       - name: Fetch GoatCounter statistics
         env:
-          GOATCOUNTER_CODE: fyimu
+          GOATCOUNTER_CODE: ${{ vars.GOATCOUNTER_CODE }}
           GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
         run: python scripts/update_statistics.py
 

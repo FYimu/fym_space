@@ -12,10 +12,26 @@ import urllib.parse
 import urllib.request
 
 
-SITE_CODE = os.environ.get("GOATCOUNTER_CODE", "fyimu").strip()
-TOKEN = os.environ.get("GOATCOUNTER_TOKEN", "").strip()
+SITE_CODE = (os.environ.get("GOATCOUNTER_CODE") or "fyimu").strip()
+TOKEN = (os.environ.get("GOATCOUNTER_TOKEN") or "").strip()
+
+if SITE_CODE.startswith("https://"):
+    SITE_CODE = SITE_CODE.removeprefix("https://").split(".", 1)[0]
+elif SITE_CODE.startswith("http://"):
+    SITE_CODE = SITE_CODE.removeprefix("http://").split(".", 1)[0]
+
+if TOKEN.lower().startswith("bearer "):
+    TOKEN = TOKEN.split(None, 1)[1].strip()
 API_BASE = f"https://{SITE_CODE}.goatcounter.com/api/v0"
 OUTPUT_PATH = "_data/statistics.yml"
+
+
+class APIError(RuntimeError):
+    def __init__(self, status: int, path: str, body: str) -> None:
+        super().__init__(f"GoatCounter API returned {status} for {path}: {body}")
+        self.status = status
+        self.path = path
+        self.body = body
 
 
 def api_get(path: str, params: dict[str, str | int] | None = None) -> dict:
@@ -37,7 +53,14 @@ def api_get(path: str, params: dict[str, str | int] | None = None) -> dict:
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as error:
         body = error.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"GoatCounter API returned {error.code}: {body}") from error
+        if error.code == 401 and "unknown token" in body:
+            raise RuntimeError(
+                "GoatCounter does not recognize GOATCOUNTER_TOKEN for "
+                f"{SITE_CODE}.goatcounter.com. Check that the GitHub secret contains "
+                "only the API token value, not the public tracking code, and that "
+                "GOATCOUNTER_CODE matches your GoatCounter subdomain."
+            ) from error
+        raise APIError(error.code, path, body) from error
 
 
 def iso_hour(value: dt.datetime) -> str:
@@ -49,7 +72,14 @@ def fetch_locations(params: dict[str, str | int]) -> dict[str, int]:
     offset = 0
 
     while True:
-        data = api_get("/stats/locations", {**params, "limit": 100, "offset": offset})
+        try:
+            data = api_get("/stats/locations", {**params, "limit": 100, "offset": offset})
+        except APIError as error:
+            if error.status == 404:
+                print("No GoatCounter location stats found yet; writing an empty country map.")
+                return {}
+            raise
+
         for item in data.get("stats", []):
             code = str(item.get("id") or item.get("name") or "").upper()
             count = int(item.get("count") or 0)
@@ -61,6 +91,18 @@ def fetch_locations(params: dict[str, str | int]) -> dict[str, int]:
         offset += 100
 
     return dict(sorted(countries.items()))
+
+
+def fetch_total(params: dict[str, str | int]) -> int:
+    try:
+        data = api_get("/stats/total", params)
+    except APIError as error:
+        if error.status == 404:
+            print("No GoatCounter total stats found yet; writing 0 visits.")
+            return 0
+        raise
+
+    return int(data.get("total") or data.get("total_utc") or 0)
 
 
 def write_statistics(total_visits: int, countries: dict[str, int]) -> None:
@@ -88,8 +130,7 @@ def main() -> int:
         "end": iso_hour(now),
     }
 
-    total_data = api_get("/stats/total", params)
-    total_visits = int(total_data.get("total") or 0)
+    total_visits = fetch_total(params)
     countries = fetch_locations(params)
     write_statistics(total_visits, countries)
 
