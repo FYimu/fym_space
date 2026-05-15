@@ -2,7 +2,8 @@ title: FAN Jue
 email: jue.fan@u.nus.edu
 description: PhD Student @ NUS
 baseurl: "" 
-url: "https://github.com/FYimu"
+url: "https://fyimu.github.io"
+baseurl: "/fanjue"
 
 # Build settings
 #theme: minima # Or leave blank if using custom CSS
