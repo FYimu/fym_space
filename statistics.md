@@ -20,6 +20,12 @@ active_nav: statistics
   </div>
 
   <p class="stats-total">Thanks for lighting up your country on the map!</p>
+
+  <p class="stats-note">
+    This page keeps a tiny, aggregate headcount of where visitors come from, mostly so I can admire the map slowly waking up. No names, no IP addresses, no personal detective work; just country-level dots and a visit total.
+  </p>
+
+  
 </div>
 
 <script>
