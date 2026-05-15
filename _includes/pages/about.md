@@ -19,7 +19,7 @@
     </div>
 
     <div class="about-photo">
-        <img src="{{ '/assets/gallery/me.jpg'" alt="PHOTO"}}">
+        <img src="{{ '/assets/gallery/me.jpg' | relative_url }}" alt="PHOTO">
     </div>
   </div>
 
