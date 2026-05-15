@@ -148,13 +148,14 @@
 
 @media (max-width: 640px) {
   .updates-container {
-    margin-top: 3rem;
-    padding: 1.25rem;
+    margin-top: 2.2rem;
+    padding: 1rem;
   }
 
   .updates-header {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     gap: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .updates-list {
@@ -162,8 +163,9 @@
   }
 
   .updates-list li {
+    font-size: 14px;
     display: block;
-    margin-bottom: 1.15rem;
+    margin-bottom: 0.9rem;
   }
 
   .updates-list.is-expanded .update-item.is-collapsed {
@@ -171,6 +173,7 @@
   }
 
   .update-date {
+    font-size: 11px;
     display: block;
     width: auto;
     padding-top: 0;

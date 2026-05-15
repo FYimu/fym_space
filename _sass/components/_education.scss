@@ -33,12 +33,25 @@
   .edu-item {
     grid-template-columns: 1fr;
     gap: 0.45rem;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
   }
 
   .edu-year {
     padding-top: 0;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+  }
+
+  .edu-degree {
+    font-size: 1rem;
+  }
+
+  .edu-institution {
+    font-size: 11px;
+  }
+
+  .edu-desc {
+    font-size: 12px;
+    line-height: 1.62;
   }
 }

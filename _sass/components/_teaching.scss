@@ -66,15 +66,27 @@
   .teaching-item {
     grid-template-columns: 1fr;
     gap: 0.45rem;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.6rem;
   }
 
   .teaching-code {
     padding-top: 0;
+    font-size: 0.85rem;
   }
 
   .teaching-title {
-    font-size: 1.15rem;
+    font-size: 1rem;
+  }
+
+  .teaching-role,
+  .teaching-desc {
+    font-size: 12px;
+    line-height: 1.62;
+  }
+
+  .teaching-semesters li {
+    font-size: 11px;
+    padding: 0.2rem 0.55rem;
   }
 }

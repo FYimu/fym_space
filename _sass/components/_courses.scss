@@ -147,15 +147,16 @@
 @media (max-width: 640px) {
   .courses-grid {
     grid-template-columns: 1fr;
+    gap: 0.9rem;
   }
 
   .course-card {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
   .course-subhead {
-    font-size: 1.2rem;
-    margin-top: 2.25rem;
+    font-size: 1.05rem;
+    margin: 1.8rem 0 1rem;
   }
 
   .review-rating {
@@ -165,10 +166,22 @@
   }
 
   .rating-label {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .rating-value {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  .course-name,
+  .review-title {
+    font-size: 1.08rem;
+  }
+
+  .course-code,
+  .review-meta,
+  .review-section p,
+  .review-section ul {
+    font-size: 14px;
   }
 }

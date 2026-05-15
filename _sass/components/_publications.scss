@@ -58,6 +58,34 @@
 }
 .pub-tag:hover { background: var(--sage-light); border-color: var(--sage); color: var(--sage-dark); }
 
+@media (max-width: 640px) {
+  .pub-note {
+    font-size: 13px;
+    margin-bottom: 1.2rem;
+  }
+
+  .pub-item {
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 1.15rem;
+  }
+
+  .pub-title {
+    font-size: 1rem;
+    line-height: 1.28;
+  }
+
+  .pub-authors,
+  .pub-venue {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .pub-tag {
+    font-size: 11px;
+    padding: 0.2rem 0.55rem;
+  }
+}
+
 
 @keyframes halo-glow {
   0% {

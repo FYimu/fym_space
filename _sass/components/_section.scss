@@ -36,17 +36,22 @@
 
 @media (max-width: 820px) {
   .section-header {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .section-eyebrow {
+    font-size: 10px;
+    margin-bottom: 0.4rem;
   }
 }
 
 @media (max-width: 420px) {
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 }

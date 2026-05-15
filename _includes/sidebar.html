@@ -23,6 +23,7 @@
       <a href="{{ '/hobbies/' | relative_url }}" data-section="hobbies" class="{% if page.active_nav == 'hobbies' %}active{% endif %}">Side Missions</a>
     </nav>
 
+
     <div class="sidebar-footer">
       <div class="sidebar-links">
         <a href="spaceholder" target="_blank">CV</a>
@@ -31,6 +32,12 @@
         <a href="https://github.com/FYimu" target="_blank">GitHub</a>
         <a href="https://scholar.google.com/citations?user=x6ZbPaQAAAAJ&hl=en" target="_blank">Scholar</a>
       </div>
+    </div>
+
+    {% comment %} Keep this below the contact links on the desktop sidebar. {% endcomment %}
+    <div class="sidebar-site-footer">
+      <div>© {{ 'now' | date: "%Y" }} {{ 'FAN JUE' }}</div>
+      <a href="{{ '/statistics/' | relative_url }}" class="{% if page.active_nav == 'statistics' %}active{% endif %}">Statistics</a>
     </div>
   </div>
 </aside>

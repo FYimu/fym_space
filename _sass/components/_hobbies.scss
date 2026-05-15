@@ -68,14 +68,31 @@
   .hobbies-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .hobby-card {
-    padding: 1.35rem;
+    padding: 0.95rem 1rem;
+  }
+
+  .hobby-icon {
+    font-size: 1rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .hobby-name {
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .hobby-desc,
+  .gallery-intro {
+    font-size: 12px;
+    line-height: 1.55;
   }
 
   .gallery-intro {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .gallery-img {
