@@ -19,4 +19,12 @@
       <div class="hobby-desc">Exploring the rhythm of connection through moments captured in the frame.</div>
     </div>
   </a>
+
+  <a href="{{ '/hobbies/blog/' | relative_url }}" class="hobby-card-link">
+    <div class="hobby-card">
+      <div class="hobby-icon">◎</div>
+      <div class="hobby-name">Life Notes</div>
+      <div class="hobby-desc">Journeys, conference trips, and small field notes from life outside the usual margins.</div>
+    </div>
+  </a>
 </div>

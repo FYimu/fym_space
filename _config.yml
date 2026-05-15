@@ -20,3 +20,6 @@ collections:
     output: false
   publications:
     output: false
+  life_posts:
+    output: true
+    permalink: /hobbies/blog/:name/

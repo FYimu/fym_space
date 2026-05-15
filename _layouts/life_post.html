@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="layout">
+    {% include sidebar.html %}
+    <main class="main life-post">
+      <div class="section-header">
+        <div class="section-eyebrow">{{ page.date | date: "%b %Y" }}</div>
+        <h1 class="section-title">{{ page.title }}</h1>
+      </div>
+
+      <a href="{{ '/hobbies/blog/' | relative_url }}" class="back-btn">← Back to Life Notes</a>
+
+      <div class="blog-content blog-lede">
+        {{ content }}
+      </div>
+
+      {% if page.photos %}
+      <div class="photo-story">
+        {% for photo in page.photos %}
+        <article class="photo-story-item">
+          {% assign photo_label = photo.date | default: photo.caption %}
+          <figure class="photo-media">
+            {% if photo.images %}
+              <div class="photo-collage">
+                {% for collage_image in photo.images %}
+                  {% assign collage_src = collage_image.image | default: collage_image %}
+                  {% assign collage_alt = collage_image.alt | default: photo.alt | default: photo_label | default: page.title %}
+                  <img src="{{ collage_src | relative_url }}" alt="{{ collage_alt }}"{% if collage_image.position %} style="object-position: {{ collage_image.position }};"{% endif %}>
+                {% endfor %}
+              </div>
+            {% else %}
+              <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt | default: photo_label | default: page.title }}"{% if photo.position %} style="object-position: {{ photo.position }};"{% endif %}>
+            {% endif %}
+          </figure>
+
+          <div class="photo-writeup">
+            {% if photo.text %}
+              <div>{% include utils/inline-markdown.html value=photo.text %}</div>
+            {% endif %}
+            {% if photo.location or photo_label %}
+              <div class="photo-meta">
+                {% if photo.location %}
+                  <span>{{ photo.location }}</span>
+                {% endif %}
+                {% if photo.location and photo_label %}
+                  <span class="photo-meta-dot">•</span>
+                {% endif %}
+                {% if photo_label %}
+                  <span>{{ photo_label }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </main>
+  </div>
+
+  {% include scripts/nav.html %}
+  {% include scripts/gallery.html %}
+</body>
+</html>

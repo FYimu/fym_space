@@ -18,7 +18,7 @@ active_nav: hobbies
   {% for item in site.data.galleries.dance_gallery %}
   <figure class="gallery-item">
 
-    <img src="{{ '/assets/gallery/' | append: item.image | relative_url }}" alt="{{ item.caption }}">
+    <img src="{{ '/assets/gallery/' | append: item.image | relative_url }}" alt="{{ item.caption }}"{% if item.position %} style="object-position: {{ item.position }};"{% endif %}>
     
     {% if item.caption %}
       <figcaption class="gallery-caption">{{ item.caption }}</figcaption>

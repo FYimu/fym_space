@@ -26,6 +26,9 @@ active_nav: hobbies
     {% if item.date %}
       <figcaption class="update-date">{{ item.date }}</figcaption>
     {% endif %}
+    {% if item.link %}
+      <a class="update-arrow-link gallery-arrow-link" href="{{ item.link | relative_url }}" aria-label="Read related Life Notes post">→</a>
+    {% endif %}
   </figure>
   {% endfor %}
 </div>

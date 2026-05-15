@@ -2,6 +2,7 @@
 _site/
 .jekyll-cache/
 .jekyll-metadata
+.sass-cache/
 
 # Dependencies
 Gemfile.lock
@@ -32,4 +33,5 @@ Thumbs.db
 
 # Bundler
 .bundle/
+.home/
 bin/

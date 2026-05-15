@@ -8,7 +8,7 @@ The repository has been restructured for better modularity and maintainability, 
 
 - **_sass/** - Stylesheets organized by category (base, components, utilities)
 - **_data/** - Structured data files organized by function (profile, galleries)
-- **_updates/**, **_courses/**, **_education/**, **_teaching/**, **_publications/** - Markdown collections for prose-heavy content
+- **_updates/**, **_courses/**, **_education/**, **_teaching/**, **_publications/**, **_life_posts/** - Markdown collections for prose-heavy content
 - **_includes/** - Reusable template components (pages, scripts)
 - **_layouts/** - Page layout templates
 - **about.md**, **education.md**, **publications.md**, **teaching.md**, **courses.md**, **hobbies.md** - Top-level sidebar pages
@@ -27,6 +27,7 @@ The repository has been restructured for better modularity and maintainability, 
 - **teaching.md** - Teaching page
 - **courses.md** - Courses page
 - **hobbies.md** - Side Missions page
+- **blog.md** - Life Notes index at `/hobbies/blog/`
 - **dance.md** - Dance gallery page at `/hobbies/dance/`
 - **travel.md** - Travel gallery page at `/hobbies/travel/`
 - **todo.md** - Personal to-do list
@@ -51,6 +52,7 @@ Reusable component styles:
 - **_courses.scss** - Course cards and reviews
 - **_teaching.scss** - Teaching experience styles
 - **_hobbies.scss** - Hobby cards and gallery
+- **_blog.scss** - Life Notes cards and photo/writeup story layout
 - **_updates.scss** - Updates section styles
 - **_gallery.scss** - Gallery grid layout
 - **_people.scss** - Person link styling
@@ -85,6 +87,7 @@ Content that contains Markdown now lives in collection documents:
 - **_education/** - Education metadata in front matter and the description in the Markdown body.
 - **_teaching/** - Teaching metadata in front matter and the description in the Markdown body.
 - **_publications/** - Publication entries, with Markdown-capable front matter for authors and venues.
+- **_life_posts/** - Life Notes entries, with optional `photos` front matter for image-specific writeups.
 
 ### `/_includes/` - Reusable Templates
 
@@ -130,6 +133,7 @@ In templates, data is accessed using nested paths:
 {{ site.education | sort: "order" }}     <!-- Education entries -->
 {{ site.courses | sort: "order" }}       <!-- Course entries -->
 {{ site.publications | sort: "order" }}  <!-- Publication entries -->
+{{ site.life_posts | sort: "date" }}     <!-- Life Notes entries -->
 {{ site.teaching | sort: "order" }}      <!-- Teaching entries -->
 {{ site.updates | sort: "order" }}       <!-- Timeline updates -->
 ```

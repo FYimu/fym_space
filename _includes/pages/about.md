@@ -45,7 +45,7 @@
       <span class="update-text">
         {% include utils/inline-markdown.html value=update.content %}
         {% if update.link %}
-          <a href="{{ update.link | relative_url }}#{{ update.paper_id }}" class="update-arrow-link js-update-link">→</a>
+          <a href="{{ update.link | relative_url }}{% if update.paper_id %}#{{ update.paper_id }}{% endif %}" class="update-arrow-link js-update-link">→</a>
         {% endif %}
       </span>
     </li>
