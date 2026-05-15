@@ -1,0 +1,41 @@
+name: Update Statistics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch GoatCounter statistics
+        env:
+          GOATCOUNTER_CODE: fyimu
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
+        run: python scripts/update_statistics.py
+
+      - name: Commit updated statistics
+        run: |
+          if git diff --quiet -- _data/statistics.yml; then
+            echo "No statistics changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _data/statistics.yml
+          git commit -m "Update website statistics"
+          git push

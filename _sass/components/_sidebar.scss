@@ -81,3 +81,21 @@
       border-radius: 2px;
     }
     .sidebar-links a:hover { color: var(--ink); border-color: var(--rose); text-decoration: none;}
+
+    .sidebar-stats-link {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .sidebar-stats-link:hover,
+    .sidebar-stats-link.active {
+      color: var(--sage);
+      border-bottom-color: var(--sage);
+      text-decoration: none;
+    }

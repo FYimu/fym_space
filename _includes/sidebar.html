@@ -22,5 +22,6 @@
       
     </div>
     <div>© {{ 'now' | date: "%Y" }} {{ 'FAN JUE' }}</div>
+    <a href="{{ '/statistics/' | relative_url }}" class="sidebar-stats-link {% if page.active_nav == 'statistics' %}active{% endif %}">Statistics</a>
   </div>
 </aside>
