@@ -184,7 +184,7 @@ In templates, data is accessed using nested paths:
 ### Adding a new top-level page:
 1. Create `_includes/pages/section.md`
 2. Create a root page such as `section.md` with `layout: default`, a `permalink`, and `active_nav`
-3. Include the reusable content template with `{% include pages/section.md %}`
+3. Include the reusable content template with `{% raw %}{% include pages/section.md %}{% endraw %}`
 4. Add a sidebar link in `_includes/sidebar.html`
 5. Add section-specific styles to `_sass/components/` if needed
 
