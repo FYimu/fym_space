@@ -1,27 +1,36 @@
 <aside class="sidebar">
-  <div class="sidebar-name">{{ 'FAN Jue' }}</div>
-  <div class="sidebar-role">{{ site.description }}</div>
-  <div class="sidebar-divider"></div>
-
-  <nav id="nav">
-    <a href="{{ '/about/' | relative_url }}" data-section="about" class="{% if page.active_nav == 'about' %}active{% endif %}">About</a>
-    <a href="{{ '/education/' | relative_url }}" data-section="education" class="{% if page.active_nav == 'education' %}active{% endif %}">Education</a>
-    <a href="{{ '/publications/' | relative_url }}" data-section="publications" class="{% if page.active_nav == 'publications' %}active{% endif %}">Publications</a>
-    <a href="{{ '/teaching/' | relative_url }}" data-section="teaching" class="{% if page.active_nav == 'teaching' %}active{% endif %}">Teaching</a>
-    <a href="{{ '/courses/' | relative_url }}" data-section="courses" class="{% if page.active_nav == 'courses' %}active{% endif %}">Courses</a> 
-    <a href="{{ '/hobbies/' | relative_url }}" data-section="hobbies" class="{% if page.active_nav == 'hobbies' %}active{% endif %}">Side Missions</a>
-  </nav>
-
-  <div class="sidebar-footer">
-    <div class="sidebar-links">
-      <a href="spaceholder" target="_blank">CV</a>
-      <a href="https://www.linkedin.com/in/jue-fan-a66a541b6/" target="_blank">LinkedIn</a>
-      <a href="mailto:{{ site.email }}">Email</a>
-      <a href="https://github.com/FYimu" target="_blank">GitHub</a>
-      <a href="https://scholar.google.com/citations?user=x6ZbPaQAAAAJ&hl=en" target="_blank">Scholar</a>
-      
+  <div class="sidebar-mobile-header">
+    <div>
+      <div class="sidebar-name">{{ 'FAN Jue' }}</div>
+      <div class="sidebar-role">{{ site.description }}</div>
     </div>
-    <div>© {{ 'now' | date: "%Y" }} {{ 'FAN JUE' }}</div>
-    <a href="{{ '/statistics/' | relative_url }}" class="sidebar-stats-link {% if page.active_nav == 'statistics' %}active{% endif %}">Statistics</a>
+    <button class="sidebar-toggle" type="button" aria-label="Open navigation menu" aria-controls="sidebar-menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div id="sidebar-menu" class="sidebar-menu">
+    <div class="sidebar-divider"></div>
+
+    <nav id="nav">
+      <a href="{{ '/about/' | relative_url }}" data-section="about" class="{% if page.active_nav == 'about' %}active{% endif %}">About</a>
+      <a href="{{ '/education/' | relative_url }}" data-section="education" class="{% if page.active_nav == 'education' %}active{% endif %}">Education</a>
+      <a href="{{ '/publications/' | relative_url }}" data-section="publications" class="{% if page.active_nav == 'publications' %}active{% endif %}">Publications</a>
+      <a href="{{ '/teaching/' | relative_url }}" data-section="teaching" class="{% if page.active_nav == 'teaching' %}active{% endif %}">Teaching</a>
+      <a href="{{ '/courses/' | relative_url }}" data-section="courses" class="{% if page.active_nav == 'courses' %}active{% endif %}">Courses</a>
+      <a href="{{ '/hobbies/' | relative_url }}" data-section="hobbies" class="{% if page.active_nav == 'hobbies' %}active{% endif %}">Side Missions</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-links">
+        <a href="spaceholder" target="_blank">CV</a>
+        <a href="https://www.linkedin.com/in/jue-fan-a66a541b6/" target="_blank">LinkedIn</a>
+        <a href="mailto:{{ site.email }}">Email</a>
+        <a href="https://github.com/FYimu" target="_blank">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=x6ZbPaQAAAAJ&hl=en" target="_blank">Scholar</a>
+      </div>
+    </div>
   </div>
 </aside>

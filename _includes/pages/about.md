@@ -58,3 +58,8 @@
     </button>
   {% endif %}
 </div>
+
+<footer class="about-footer">
+  <div>© {{ 'now' | date: "%Y" }} {{ 'FAN JUE' }}</div>
+  <a href="{{ '/statistics/' | relative_url }}">Statistics</a>
+</footer>

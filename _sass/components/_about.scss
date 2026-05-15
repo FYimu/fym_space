@@ -55,6 +55,32 @@
     color: var(--ink);
 }
 
+.about-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--warm-gray);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+}
+
+.about-footer a {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.about-footer a:hover {
+  color: var(--sage);
+  border-bottom-color: var(--sage);
+  text-decoration: none;
+}
+
 @media (max-width: 700px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -75,5 +101,11 @@
 
   .about-info .label {
     padding-top: 0;
+  }
+
+  .about-footer {
+    margin-top: 2.25rem;
+    padding-top: 1.5rem;
+    font-size: 1rem;
   }
 }
