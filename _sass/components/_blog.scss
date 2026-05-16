@@ -194,12 +194,21 @@
     padding: 1rem 0;
   }
 
+  .photo-story-item:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
   .photo-media,
   .photo-writeup,
   .photo-story-item:nth-child(even) .photo-media,
   .photo-story-item:nth-child(even) .photo-writeup {
     grid-column: 1;
     grid-row: auto;
+  }
+
+  .photo-media {
+    width: min(100%, 300px);
+    justify-self: center;
   }
 
   .photo-collage {
