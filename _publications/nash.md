@@ -7,4 +7,7 @@ authors: |
 venue: |
   ICML **Spotlight**✨ 2026 &#124; Acceptance Rate: **2.2%**
 pdf: "https://arxiv.org/pdf/2605.10684"
+topics:
+  - Data Valuation
+  - Data Selection
 ---

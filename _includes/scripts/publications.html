@@ -1,0 +1,45 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const topicButtons = document.querySelectorAll('.js-pub-topic');
+  const publicationItems = document.querySelectorAll('.pub-item[data-topics]');
+
+  if (!topicButtons.length || !publicationItems.length) return;
+
+  let activeTopics = new Set();
+
+  function syncFilters() {
+    topicButtons.forEach((button) => {
+      const topic = button.dataset.topic || 'all';
+      const isActive = topic === 'all' ? activeTopics.size === 0 : activeTopics.has(topic);
+
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+
+    publicationItems.forEach((item) => {
+      const topics = (item.dataset.topics || '').split('|');
+      const matches = [...activeTopics].every((topic) => topics.includes(topic));
+
+      item.classList.toggle('is-hidden', !matches);
+    });
+  }
+
+  topicButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const topic = button.dataset.topic || 'all';
+
+      if (topic === 'all') {
+        activeTopics.clear();
+      } else if (activeTopics.has(topic)) {
+        activeTopics.delete(topic);
+      } else {
+        activeTopics.add(topic);
+      }
+
+      syncFilters();
+    });
+  });
+
+  syncFilters();
+});
+</script>

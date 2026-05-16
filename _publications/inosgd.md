@@ -7,4 +7,6 @@ authors: |
 venue: |
   ICLR Poster 2026 &#124; Acceptance Rate: **28.18%**
 pdf: "https://openreview.net/pdf?id=HMapYMkcrl"
+topics:
+  - Differential Privacy
 ---

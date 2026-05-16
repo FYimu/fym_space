@@ -7,4 +7,8 @@ authors: |
 venue: |
   AAAI Poster 2024 &#124; Acceptance Rate: **23.75%**
 pdf: "https://arxiv.org/pdf/2312.11413"
+topics:
+  - Data Valuation
+  - Mechanism Design
+  - Machine Unlearning
 ---

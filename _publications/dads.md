@@ -7,4 +7,7 @@ authors: |
 venue: |
   ICML Poster 2024 &#124; Acceptance Rate: **27.50%**
 pdf: "https://openreview.net/pdf?id=ecvuJWE1YY"
+topics:
+  - Data Selection
+  - Machine Unlearning
 ---
