@@ -1,5 +1,7 @@
 ## TODO: 
 
+#### About
+- [ ] change profile photo css
 
 #### Publication
 - [ ] add classification tags for each publication

@@ -22,7 +22,8 @@ active_nav: statistics
   <p class="stats-total">Thanks for lighting up where you are on the map!</p>
 
   <p class="stats-note">
-    This page keeps a tiny, aggregate headcount of where visitors come from, mostly so I can admire the map slowly waking up. No names, no IP addresses, no personal detective work; just country-level dots and a visit total.
+    This page keeps a tiny, aggregate headcount of where visitors come from, mostly so I can admire the map slowly waking up. <br> 
+    No names, no IP addresses, no personal detective work; just country-level dots and a visit total.
   </p>
 
   
