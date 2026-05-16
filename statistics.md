@@ -19,7 +19,7 @@ active_nav: statistics
     <p class="stats-map-fallback">Loading map...</p>
   </div>
 
-  <p class="stats-total">Thanks for lighting up your country on the map!</p>
+  <p class="stats-total">Thanks for lighting up where you are on the map!</p>
 
   <p class="stats-note">
     This page keeps a tiny, aggregate headcount of where visitors come from, mostly so I can admire the map slowly waking up. No names, no IP addresses, no personal detective work; just country-level dots and a visit total.
@@ -55,6 +55,7 @@ active_nav: statistics
     const roseLight = styles.getPropertyValue('--rose-light').trim();
     const linen = styles.getPropertyValue('--linen').trim();
     const ink = styles.getPropertyValue('--ink').trim();
+    const warmGray = styles.getPropertyValue('--warm-gray').trim();
     const countryVisits = window.websiteStats.countries || {};
     const tinyCountries = {
       SG: { name: 'Singapore', coords: [1.3521, 103.8198] },
@@ -69,6 +70,7 @@ active_nav: statistics
       SM: { name: 'San Marino', coords: [43.9424, 12.4578] },
       VA: { name: 'Vatican City', coords: [41.9029, 12.4534] },
       MV: { name: 'Maldives', coords: [3.2028, 73.2207] },
+      SC: { name: 'Seychelles', coords: [-4.6796, 55.4920] },
       BN: { name: 'Brunei', coords: [4.5353, 114.7277] },
       QA: { name: 'Qatar', coords: [25.3548, 51.1839] }
     };
@@ -79,11 +81,22 @@ active_nav: statistics
         code,
         visits: Number(countryVisits[code] || 0)
       }));
+    const visitedCountryCodes = Object.keys(countryVisits)
+      .filter((code) => Number(countryVisits[code] || 0) > 0);
+    const paintVisitedRegions = (map) => {
+      visitedCountryCodes.forEach((code) => {
+        const region = map.regions?.[code];
+        if (!region?.element?.setStyle) return;
+        region.element.setStyle('fill', rose);
+        region.element.setStyle('fill-opacity', 1);
+      });
+    };
 
     try {
       target.innerHTML = '';
 
-      new jsVectorMap({
+      let map;
+      map = new jsVectorMap({
         selector: '#stats-country-map',
         map: 'world_merc',
         backgroundColor: 'transparent',
@@ -97,15 +110,15 @@ active_nav: statistics
             strokeWidth: 0.5
           },
           hover: {
-            fill: rose,
-            fillOpacity: 0.86,
+            fill: warmGray,
+            fillOpacity: 0.78,
             cursor: 'default'
           }
         },
         series: {
           regions: [{
             values: countryVisits,
-            scale: [roseLight, rose],
+            scale: [rose, rose],
             normalizeFunction: 'polynomial'
           }]
         },
@@ -119,8 +132,8 @@ active_nav: statistics
             strokeWidth: 2.4
           },
           hover: {
-            fill: rose,
-            stroke: ink,
+            fill: warmGray,
+            stroke: linen,
             cursor: 'default'
           }
         },
@@ -129,6 +142,9 @@ active_nav: statistics
           tooltip.css({ color: ink, backgroundColor: linen, borderColor: rose });
           tooltip.text(`${tooltip.text()} · ${visits} visits`);
         },
+        onRegionOut() {
+          if (map) paintVisitedRegions(map);
+        },
         onMarkerTooltipShow(event, tooltip, index) {
           const marker = tinyCountryMarkers[index];
           if (!marker) return;
@@ -136,6 +152,7 @@ active_nav: statistics
           tooltip.text(`${marker.name} · ${marker.visits} visits`);
         }
       });
+      paintVisitedRegions(map);
     } catch (error) {
       console.error('Could not load statistics map:', error);
       showMapFallback();
