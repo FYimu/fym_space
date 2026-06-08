@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 8
 date_label: "Feb 2026"
 link: "/publications/"
 paper_id: "inosgd"

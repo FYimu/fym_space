@@ -135,7 +135,7 @@ In templates, data is accessed using nested paths:
 {{ site.publications | sort: "order" }}  <!-- Publication entries -->
 {{ site.life_posts | sort: "date" }}     <!-- Life Notes entries -->
 {{ site.teaching | sort: "order" }}      <!-- Teaching entries -->
-{{ site.updates | sort: "order" }}       <!-- Timeline updates -->
+{{ site.updates | sort: "order" | reverse }} <!-- Timeline updates, newest first -->
 ```
 
 ## Best Practices
@@ -173,7 +173,7 @@ In templates, data is accessed using nested paths:
 
 ### Adding new Markdown content:
 1. Create a document in the relevant collection, for example `_updates/12-new-item.md`
-2. Add front matter such as `order`, labels, links, or metadata
+2. Add front matter such as `order`, labels, links, or metadata. For updates, increment `order`; the page reverses the sorted list so the newest item appears first.
 3. Put the rendered prose in the Markdown body
 
 ### Adding new structured data:

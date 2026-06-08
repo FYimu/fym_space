@@ -78,7 +78,7 @@ Latest updates:
 _updates/*.md
 ```
 
-Each update has front matter such as `order`, `date_label`, optional `link`, and content.
+Each update has front matter such as `order`, `date_label`, optional `link`, and content. Use increasing `order` values as updates are added; the About page renders them newest first.
 
 ### Publications
 

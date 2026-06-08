@@ -38,7 +38,7 @@
 <div class="updates-container">
   <div class="updates-header">Latest Updates</div>
   <ul class="updates-list" id="updates-list">
-    {% assign updates = site.updates | sort: "order" %}
+    {% assign updates = site.updates | sort: "order" | reverse %}
     {% for update in updates %}
     <li class="update-item {% if forloop.index > 10 %}is-collapsed{% endif %}">
       <span class="update-date">{{ update.date_label }}</span>
