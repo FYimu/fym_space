@@ -4,6 +4,7 @@
       width: 100%;
       min-width: 0;
       box-sizing: border-box;
+      position: relative;
     }
 
 @media (max-width: 820px) {
@@ -15,5 +16,92 @@
 @media (max-width: 420px) {
   .main {
     padding: 1.25rem 0.9rem 3rem;
+  }
+}
+
+.sidebar,
+.sidebar-menu,
+.updates-container,
+.about-grid,
+.about-info,
+.pub-item,
+.course-card,
+.rating-item,
+.hobby-card,
+.blog-card,
+.edu-item,
+.teaching-item,
+.stats-map,
+.stats-total {
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--surface-radius);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.18);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.18);
+}
+
+.sidebar,
+.sidebar-menu {
+  background: var(--glass-surface-strong);
+}
+
+.pub-topic-pill,
+.pub-tag,
+.sidebar-links a,
+.sidebar-toggle,
+.back-btn,
+.updates-toggle,
+.teaching-semesters li {
+  background: var(--glass-control);
+  border: 1px solid var(--glass-border-med);
+  border-radius: var(--control-radius);
+  box-shadow: var(--glass-shadow-soft);
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.75)) saturate(1.12);
+  backdrop-filter: blur(calc(var(--glass-blur) * 0.75)) saturate(1.12);
+}
+
+.pub-item:hover,
+.course-card:hover,
+.hobby-card-link:hover .hobby-card,
+.blog-card:hover,
+.stats-total:hover,
+.gallery-item:hover img,
+.gallery-img:hover,
+.photo-media:hover > img,
+.photo-collage img:hover {
+  box-shadow: var(--glass-shadow-hover);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .sidebar,
+  .sidebar-menu,
+  .updates-container,
+  .about-grid,
+  .about-info,
+  .pub-item,
+  .course-card,
+  .rating-item,
+  .hobby-card,
+  .blog-card,
+  .edu-item,
+  .teaching-item,
+  .stats-map,
+  .stats-total {
+    background: var(--glass-solid);
+  }
+
+  .pub-topic-pill,
+  .pub-tag,
+  .sidebar-links a,
+  .sidebar-toggle,
+  .back-btn,
+  .updates-toggle,
+  .teaching-semesters li {
+    background: var(--glass-control-solid);
+  }
+
+  .gallery-lightbox {
+    background: rgba(250, 251, 253, 0.96);
   }
 }

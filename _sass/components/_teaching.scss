@@ -2,13 +2,15 @@
     display: grid;
     grid-template-columns: 60px 1fr; /* Widened slightly for course codes */
     gap: 0 2rem;
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.25rem;
+    padding: 1.35rem 1.45rem;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-surface);
+    border-radius: var(--surface-radius);
+    box-shadow: var(--glass-shadow-soft);
 }
 
 .teaching-item:last-child { 
-    border-bottom: none; 
     margin-bottom: 0; 
 }
 
@@ -56,9 +58,9 @@
     font-size: 13px;
     letter-spacing: 0.05em;
     padding: 0.25rem 0.65rem;
-    background: var(--linen);
-    border: 1px solid var(--border-med);
-    border-radius: 2px;
+    background: var(--glass-control);
+    border: 1px solid var(--glass-border-med);
+    border-radius: var(--control-radius);
     color: var(--ink-soft);
 }
 
@@ -66,8 +68,8 @@
   .teaching-item {
     grid-template-columns: 1fr;
     gap: 0.45rem;
-    margin-bottom: 1.6rem;
-    padding-bottom: 1.6rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
   }
 
   .teaching-code {

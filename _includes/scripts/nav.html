@@ -37,12 +37,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const updatesList = document.getElementById('updates-list');
 
   if (toggleBtn && updatesList) {
+    const setMobileUpdatesHeight = () => {
+      if (window.matchMedia('(max-width: 640px)').matches) {
+        const wasExpanded = updatesList.classList.contains('is-expanded');
+        if (wasExpanded) {
+          updatesList.classList.remove('is-expanded');
+        }
+
+        updatesList.style.setProperty('--updates-scroll-height', `${updatesList.offsetHeight}px`);
+
+        if (wasExpanded) {
+          updatesList.classList.add('is-expanded');
+        }
+      } else {
+        updatesList.style.removeProperty('--updates-scroll-height');
+      }
+    };
+
     toggleBtn.addEventListener('click', () => {
+      if (!updatesList.classList.contains('is-expanded')) {
+        setMobileUpdatesHeight();
+      }
+
       const isExpanded = updatesList.classList.toggle('is-expanded');
       toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
 
       if (!isExpanded) {
+        updatesList.style.removeProperty('--updates-scroll-height');
         document.querySelector('.updates-header')?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (updatesList.classList.contains('is-expanded')) {
+        setMobileUpdatesHeight();
       }
     });
   }

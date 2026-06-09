@@ -2,6 +2,8 @@
 html { 
   scroll-behavior: smooth; 
   scrollbar-gutter: stable;
+  min-height: 100%;
+  background: var(--cream);
 }
 
 html,
@@ -11,11 +13,22 @@ body {
 
 body {
     font-family: "Palatino", "Palatino Linotype", "Book Antiqua", serif;
-    background: var(--cream);
+    min-height: 100vh;
+    background:
+      linear-gradient(125deg, rgba(213, 219, 214, 0.82) 0%, rgba(213, 219, 214, 0.18) 28%, rgba(213, 219, 214, 0) 54%),
+      linear-gradient(235deg, rgba(223, 215, 214, 0.78) 0%, rgba(223, 215, 214, 0.18) 32%, rgba(223, 215, 214, 0) 58%),
+      linear-gradient(25deg, rgba(206, 212, 218, 0.72) 0%, rgba(206, 212, 218, 0.16) 36%, rgba(206, 212, 218, 0) 62%),
+      linear-gradient(180deg, #fbfcff 0%, #f4f7f7 46%, #fbf6f7 100%);
+    background-attachment: fixed;
     color: var(--ink);
     font-size: 15px;
     line-height: 1.75;
     font-weight: 300;
+}
+
+::selection {
+  background: rgba(223, 215, 214, 0.78);
+  color: var(--ink);
 }
 
 @media (max-width: 480px) {

@@ -6,7 +6,7 @@
   <div class="about-grid">
     <div class="about-text">
       <p>
-        Hi, Fan Jue (范珏) here! I am a CS PhD student in School of Computing at National University of Singapore (NUS). I am very fortunate to be advised by Prof. {{ site.data.profile.people.bryan }} and Dr. {{ site.data.profile.people.nancy }}. My research primarily focuses on data-efficient AI and answering the question: <em>how much is the data worth?</em>
+        Hi, Fan Jue (范珏) here! I am a CS PhD candidate in School of Computing at National University of Singapore (NUS). I am very fortunate to be advised by Prof. {{ site.data.profile.people.bryan }} and Dr. {{ site.data.profile.people.nancy }}. My research primarily focuses on data-efficient AI and answering the question: <em>how much is the data worth?</em>
       </p>
 
       <p>
@@ -25,7 +25,7 @@
 
   <div class="about-info">
         <span class="label">Position</span>
-        <span class="value">PhD Student, 2025 Spring</span>
+        <span class="value">PhD Candidate, 2025 Spring</span>
         <span class="label">Institution</span>
         <span class="value">National University of Singapore</span>
         <span class="label">Location</span>

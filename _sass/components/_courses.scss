@@ -5,14 +5,16 @@
     gap: 1.25rem;
 }
 .course-card {
-    border: 1px solid var(--border);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--surface-radius);
     padding: 1.4rem 1.5rem;
-    background: var(--linen);
+    background: var(--glass-surface);
     cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
+    box-shadow: var(--glass-shadow-soft);
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s, background 0.2s;
     position: relative;
 }
-.course-card:hover { transform: translateY(-2px); border-color: var(--border-med); }
+.course-card:hover { transform: translateY(-2px); border-color: var(--glass-border-med); background: var(--glass-surface-strong); }
 .course-card .dot {
     width: 8px; height: 8px;
     border-radius: 50%;
@@ -63,7 +65,7 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: var(--border);
+    background: rgba(255, 255, 255, 0.62);
 }
 
 /* Add extra spacing after the first grid */
@@ -85,19 +87,23 @@
     color: var(--slate);
     cursor: pointer;
     margin-bottom: 2rem;
-    transition: color 0.2s, border-bottom 0.2s;
-    padding-bottom: 4px;
-    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--glass-border-med);
+    border-radius: var(--control-radius);
+    background: var(--glass-control);
 }
 .back-btn:hover {
   color: var(--ink-soft);
-  border-bottom-color: var(--slate-light);
+  border-color: var(--slate-light);
+  background: var(--glass-surface-strong);
+  transform: translateX(-2px);
 }
 .back-btn:visited { color: var(--slate) !important; }
 .review-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.62);
 }
 .review-header .course-code { margin-bottom: 0.4rem; }
 .review-title {
@@ -112,7 +118,11 @@
     gap: 2rem;
     margin: 1.5rem 0 2rem;
 }
-.rating-item { text-align: center; }
+.rating-item {
+    text-align: center;
+    min-width: 108px;
+    padding: 0.75rem 1rem;
+}
 .rating-label {
     font-size: 15px;
     letter-spacing: 0.12em;

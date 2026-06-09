@@ -5,7 +5,7 @@
     max-width: 1300px;      /* 1. INCREASE THIS to make the whole site wider */
     width: 100%;
     margin: 0 auto;         /* 2. CENTERS the site on the screen */
-    background: var(--linen);
+    background: transparent;
 }
 
 @media (max-width: 820px) {

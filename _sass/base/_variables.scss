@@ -1,6 +1,6 @@
 :root {
-  --cream:       #FFFFFF; /* Pure clean background */
-  --linen:       #F7F7F9; /* Very subtle off-white for contrast */
+  --cream:       #FBFCFF;
+  --linen:       #F7F7F9;
   --sage:        #849488;
   --sage-light:  #D5DBD6;
   --sage-dark:   #505C54;
@@ -12,6 +12,22 @@
   --warm-gray-dk:#444444;
   --ink:         #111111; /* Near black */
   --ink-soft:    #555555;
-  --border:      rgba(0, 0, 0, 0.08);
-  --border-med:  rgba(0, 0, 0, 0.15);
+  --border:      rgba(80, 92, 84, 0.14);
+  --border-med:  rgba(80, 92, 84, 0.24);
+
+  --glass-surface:        rgba(255, 255, 255, 0.54);
+  --glass-surface-soft:   rgba(255, 255, 255, 0.36);
+  --glass-surface-strong: rgba(255, 255, 255, 0.72);
+  --glass-solid:          rgba(250, 251, 253, 0.94);
+  --glass-control:        rgba(255, 255, 255, 0.42);
+  --glass-control-solid:  rgba(248, 249, 251, 0.9);
+  --glass-border:         rgba(255, 255, 255, 0.68);
+  --glass-border-med:     rgba(132, 148, 136, 0.28);
+  --glass-blur:           18px;
+  --surface-radius:       8px;
+  --control-radius:       6px;
+  --glass-shadow:         0 18px 48px rgba(80, 92, 84, 0.12), 0 4px 18px rgba(124, 137, 150, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.74);
+  --glass-shadow-soft:    0 10px 30px rgba(80, 92, 84, 0.09), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  --glass-shadow-hover:   0 22px 56px rgba(80, 92, 84, 0.16), 0 8px 22px rgba(124, 137, 150, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  --glass-highlight:      linear-gradient(135deg, rgba(255, 255, 255, 0.66), rgba(255, 255, 255, 0.24));
 }
